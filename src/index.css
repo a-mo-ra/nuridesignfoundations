@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts - Clean Modern Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* NDF Design System Color Tokens - Purple Primary (#4D0C83) */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 274 85% 28%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 274 85% 28%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 274 85% 28%;
+    --radius: 0.5rem;
+
+    /* NDF Brand colors - Purple */
+    --ndf-50: 274 60% 97%;
+    --ndf-100: 274 55% 93%;
+    --ndf-200: 274 50% 85%;
+    --ndf-300: 274 60% 70%;
+    --ndf-400: 274 70% 55%;
+    --ndf-500: 274 85% 28%;
+    --ndf-600: 274 85% 24%;
+    --ndf-700: 274 85% 20%;
+    --ndf-800: 274 85% 16%;
+    --ndf-900: 274 85% 12%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 274 70% 65%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 274 70% 65%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 274 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+/* NDF Design System Utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-brand {
+    @apply bg-gradient-to-r from-foreground to-foreground/90;
+  }
+  
+  .bg-gradient-subtle {
+    @apply bg-gradient-to-br from-muted/50 via-background to-muted/30;
+  }
+
+  .shadow-brand {
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(77, 12, 131, 0.3);
+  }
+
+  .shadow-glow-lg {
+    box-shadow: 0 0 40px rgba(77, 12, 131, 0.4);
+  }
+
+  .shadow-elevation-1 {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-elevation-2 {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-elevation-3 {
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-elevation-4 {
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-elevation-5 {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Grid Pattern Background */
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.1) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  /* Typography Scale */
+  .text-display-2xl { @apply text-6xl leading-none font-bold tracking-tighter; }
+  .text-display-xl { @apply text-5xl leading-tight font-bold tracking-tighter; }
+  .text-display-lg { @apply text-4xl leading-tight font-bold tracking-tight; }
+  .text-display-md { @apply text-3xl leading-snug font-semibold tracking-tight; }
+  .text-display-sm { @apply text-2xl leading-snug font-semibold tracking-tight; }
+  .text-display-xs { @apply text-xl leading-relaxed font-semibold tracking-tight; }
+}
+
+/* Component Styles */
+@layer components {
+  .code-block {
+    @apply bg-muted text-foreground p-4 rounded-lg font-mono text-sm overflow-x-auto border border-border;
+  }
+  
+  .token-chip {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-muted text-muted-foreground border border-border;
+  }
+  
+  .component-preview {
+    @apply p-8 bg-gradient-subtle border border-border rounded-lg relative overflow-hidden;
+  }
+  
+  .component-preview::before {
+    content: '';
+    @apply absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none;
+  }
+
+  /* Card Styles */
+  .card-elevated {
+    @apply bg-card rounded-lg border border-border shadow-elevation-2 hover:shadow-elevation-3 transition-shadow;
+  }
+
+  /* NDF Card Style - Black with white icon */
+  .ndf-card {
+    @apply bg-foreground rounded-lg aspect-[4/3] flex items-center justify-center transition-all duration-200 hover:scale-[1.02] cursor-pointer overflow-hidden;
+  }
+
+  .ndf-card-icon {
+    @apply text-background w-10 h-10;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-medium rounded-lg shadow-lg hover:bg-primary/90 transition-all;
+  }
+
+  /* Page Header Icon Style - Black background, white icon */
+  .page-header-icon {
+    @apply w-10 h-10 bg-foreground rounded-lg flex items-center justify-center;
+  }
+
+  .page-header-icon svg {
+    @apply text-background;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full hover:bg-muted-foreground/30;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary/20 text-foreground;
+}
+
+.dark ::selection {
+  @apply bg-primary/30 text-foreground;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Focus styles for accessibility - WCAG 2.2 compliant */
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+}
+
+/* Ensure minimum touch target size - WCAG 2.2 Target Size (2.5.8) */
+button, 
+a, 
+[role="button"] {
+  min-height: 24px;
+  min-width: 24px;
+}
+
+/* Enhanced focus indicator for WCAG 2.2 Focus Appearance (2.4.11) */
+.focus-enhanced:focus-visible {
+  @apply outline-none ring-[3px] ring-primary ring-offset-2 ring-offset-background;
+}
+
+/* Homepage Icon Animations */
+@keyframes icon-layers-stack {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes icon-smile-expand {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes icon-pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(77, 12, 131, 0.3)); }
+  50% { filter: drop-shadow(0 0 8px rgba(77, 12, 131, 0.6)); }
+}
+
+@keyframes icon-rotate {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes icon-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes icon-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.icon-animate-layers:hover svg {
+  animation: icon-layers-stack 0.6s ease-in-out;
+}
+
+.icon-animate-smile:hover svg {
+  animation: icon-smile-expand 0.5s ease-in-out;
+}
+
+.icon-animate-glow:hover svg {
+  animation: icon-pulse-glow 0.6s ease-in-out;
+}
+
+.icon-animate-rotate:hover svg {
+  animation: icon-rotate 0.4s ease-in-out;
+}
+
+.icon-animate-bounce:hover svg {
+  animation: icon-bounce 0.4s ease-in-out;
+}
+
+.icon-animate-wiggle:hover svg {
+  animation: icon-wiggle 0.4s ease-in-out;
+}
