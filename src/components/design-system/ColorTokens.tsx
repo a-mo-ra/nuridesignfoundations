@@ -27,18 +27,18 @@ const ColorTokens = () => {
   const colorCategories = [
     {
       name: 'Cores NDS',
-      description: 'Paleta principal do Nuri Design System - tons de azul acinzentado',
+      description: 'Paleta principal do Nuri Design System - tons de roxo (#4D0C83)',
       colors: [
-        { name: 'nds-50', light: '#f8fafc', dark: '#0f172a', usage: 'Backgrounds sutis' },
-        { name: 'nds-100', light: '#f1f5f9', dark: '#1e293b', usage: 'Backgrounds secundários' },
-        { name: 'nds-200', light: '#e2e8f0', dark: '#334155', usage: 'Borders, divisores' },
-        { name: 'nds-300', light: '#94a3b8', dark: '#475569', usage: 'Textos desabilitados' },
-        { name: 'nds-400', light: '#64748b', dark: '#64748b', usage: 'Textos secundários' },
-        { name: 'nds-500', light: '#475569', dark: '#94a3b8', usage: 'Cor primária de destaque' },
-        { name: 'nds-600', light: '#3d4a5c', dark: '#cbd5e1', usage: 'Hover states' },
-        { name: 'nds-700', light: '#334155', dark: '#e2e8f0', usage: 'Textos importantes' },
-        { name: 'nds-800', light: '#1e293b', dark: '#f1f5f9', usage: 'Textos principais' },
-        { name: 'nds-900', light: '#0f172a', dark: '#f8fafc', usage: 'Preto do sistema' }
+        { name: 'nds-50', light: '#f5f0ff', dark: '#2e0652', usage: 'Backgrounds sutis' },
+        { name: 'nds-100', light: '#ede5ff', dark: '#4a0c83', usage: 'Backgrounds secundários' },
+        { name: 'nds-200', light: '#dcceff', dark: '#5b0da3', usage: 'Borders, divisores' },
+        { name: 'nds-300', light: '#c4a8ff', dark: '#7c1ff7', usage: 'Textos desabilitados' },
+        { name: 'nds-400', light: '#a873ff', dark: '#8b3dff', usage: 'Textos secundários' },
+        { name: 'nds-500', light: '#4D0C83', dark: '#a873ff', usage: 'Cor primária de destaque' },
+        { name: 'nds-600', light: '#5b0da3', dark: '#c4a8ff', usage: 'Hover states' },
+        { name: 'nds-700', light: '#4a0c83', dark: '#dcceff', usage: 'Textos importantes' },
+        { name: 'nds-800', light: '#2e0652', dark: '#ede5ff', usage: 'Textos principais' },
+        { name: 'nds-900', light: '#1a0336', dark: '#f5f0ff', usage: 'Preto do sistema' }
       ]
     },
     {
@@ -79,7 +79,7 @@ const ColorTokens = () => {
           Cores & Tokens
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          Palette completa do NDS com variações para dark/light mode. 
+          Paleta completa do NDS com variações para dark/light mode. 
           Todos os tokens seguem padrões WCAG 2.1 AA para contraste.
         </p>
       </div>

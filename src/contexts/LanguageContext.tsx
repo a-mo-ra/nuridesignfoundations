@@ -15,10 +15,10 @@ const translations: Record<Language, Record<string, string>> = {
     'header.noResults': 'Nenhum resultado encontrado',
     
     // Navigation groups
-    'nav.foundations': 'Foundations',
-    'nav.components': 'Components',
-    'nav.patterns': 'Patterns',
-    'nav.resources': 'Resources',
+    'nav.foundations': 'Fundamentos',
+    'nav.components': 'Componentes',
+    'nav.patterns': 'Padrões',
+    'nav.resources': 'Recursos',
     'nav.quickAccess': 'Acesso Rápido',
     'nav.externalLinks': 'Links Externos',
     
@@ -70,20 +70,92 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Motion page
     'motion.title': 'Motion & Microinterações',
-    'motion.subtitle': 'Animações e transições que melhoram a experiência do usuário através de feedback visual.',
+    'motion.subtitle': 'Animações e transições que elevam a experiência do usuário através de feedback visual, orientação e deleite.',
     'motion.principles': 'Princípios de Motion',
     'motion.timing': 'Timing & Easing',
-    'motion.microinteractions': 'Microinterações',
+    'motion.microinteractions': 'Biblioteca de Microinterações',
     'motion.examples': 'Exemplos por Dispositivo',
     'motion.bestPractices': 'Boas Práticas',
-    'motion.references': 'Referências',
+    'motion.references': 'Artigos de Referência',
+    
+    // Colors page
+    'colors.title': 'Cores & Tokens',
+    'colors.subtitle': 'Paleta completa do NDS com variações para dark/light mode. Todos os tokens seguem padrões WCAG 2.1 AA para contraste.',
+    'colors.nds': 'Cores NDS',
+    'colors.ndsDesc': 'Paleta principal do Nuri Design System - tons de roxo (#4D0C83)',
+    'colors.neutral': 'Cores Neutras',
+    'colors.neutralDesc': 'Escala de cinzas para textos e backgrounds',
+    'colors.semantic': 'Cores Semânticas',
+    'colors.semanticDesc': 'Feedback e comunicação de estados',
+    'colors.light': 'Light',
+    'colors.dark': 'Dark',
+    'colors.compare': 'Comparar',
+    'colors.howToUse': 'Como usar os tokens NDS',
+    
+    // Typography page
+    'typography.title': 'Tipografia',
+    'typography.subtitle': 'Escala tipográfica hierárquica responsiva com especificações para Figma',
+    
+    // Shadows page
+    'shadows.title': 'Sombras',
+    'shadows.subtitle': 'Elevação e profundidade através de sombras consistentes',
+    
+    // Icons page
+    'icons.title': 'Ícones',
+    'icons.subtitle': 'Coleção completa com Lucide React e ícones customizados',
+    
+    // Grid page
+    'grid.title': 'Grid System',
+    'grid.subtitle': 'Layouts responsivos e sistemas de espaçamento',
+    
+    // Components page
+    'components.title': 'UI Components',
+    'components.subtitle': 'Componentes prontos para usar em seus projetos',
+    
+    // Navigation page
+    'navigation.title': 'Navegação',
+    'navigation.subtitle': 'Headers, navbars, bottom navigation e sidebars responsivos',
+    
+    // Forms page
+    'forms.title': 'Formulários',
+    'forms.subtitle': 'Inputs, modais, toasts, accordions e componentes interativos',
+    
+    // Atomic Design page
+    'atomic.title': 'Atomic Design',
+    'atomic.subtitle': 'Atomic Design é uma metodologia criada por Brad Frost para criar sistemas de design de forma modular e escalável.',
+    
+    // Naming page
+    'naming.title': 'Nomenclatura',
+    'naming.subtitle': 'Organização, padronização e boas práticas para design systems',
+    
+    // Guidelines page
+    'guidelines.title': 'Diretrizes Nuri',
+    'guidelines.subtitle': 'Princípios fundamentais e melhores práticas para experiência do usuário',
+    
+    // Documentation page
+    'documentation.title': 'Manual de Uso',
+    'documentation.subtitle': 'Como usar este design system de forma eficaz',
+    
+    // Developer Guide page
+    'developer.title': 'Guia para Desenvolvedores',
+    'developer.subtitle': 'Boas práticas para implementar o Nuri Design System e colaborar efetivamente com o time de design.',
+    
+    // Figma pages
+    'figma.title': 'Figma Plus',
+    'figma.subtitle': 'Templates e recursos para Figma',
+    'figmaIntegration.title': 'Integração Figma',
+    'figmaIntegration.subtitle': 'Sincronize os tokens do NDS com seu arquivo Figma usando o plugin Tokens Studio.',
     
     // Common
     'common.copied': 'Copiado!',
     'common.copy': 'Copiar',
+    'common.copyCode': 'Copiar código',
     'common.download': 'Baixar',
     'common.seeMore': 'Saiba mais',
     'common.close': 'Fechar',
+    'common.search': 'Pesquisar',
+    'common.filter': 'Filtrar',
+    'common.all': 'Todos',
   },
   en: {
     // Header
@@ -146,20 +218,92 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Motion page
     'motion.title': 'Motion & Microinteractions',
-    'motion.subtitle': 'Animations and transitions that enhance user experience through visual feedback.',
+    'motion.subtitle': 'Animations and transitions that enhance user experience through visual feedback, guidance and delight.',
     'motion.principles': 'Motion Principles',
     'motion.timing': 'Timing & Easing',
-    'motion.microinteractions': 'Microinteractions',
+    'motion.microinteractions': 'Microinteractions Library',
     'motion.examples': 'Examples by Device',
     'motion.bestPractices': 'Best Practices',
-    'motion.references': 'References',
+    'motion.references': 'Reference Articles',
+    
+    // Colors page
+    'colors.title': 'Colors & Tokens',
+    'colors.subtitle': 'Complete NDS palette with dark/light mode variations. All tokens follow WCAG 2.1 AA contrast standards.',
+    'colors.nds': 'NDS Colors',
+    'colors.ndsDesc': 'Nuri Design System main palette - purple tones (#4D0C83)',
+    'colors.neutral': 'Neutral Colors',
+    'colors.neutralDesc': 'Gray scale for text and backgrounds',
+    'colors.semantic': 'Semantic Colors',
+    'colors.semanticDesc': 'Feedback and state communication',
+    'colors.light': 'Light',
+    'colors.dark': 'Dark',
+    'colors.compare': 'Compare',
+    'colors.howToUse': 'How to use NDS tokens',
+    
+    // Typography page
+    'typography.title': 'Typography',
+    'typography.subtitle': 'Responsive hierarchical typography scale with Figma specifications',
+    
+    // Shadows page
+    'shadows.title': 'Shadows',
+    'shadows.subtitle': 'Elevation and depth through consistent shadows',
+    
+    // Icons page
+    'icons.title': 'Icons',
+    'icons.subtitle': 'Complete collection with Lucide React and custom icons',
+    
+    // Grid page
+    'grid.title': 'Grid System',
+    'grid.subtitle': 'Responsive layouts and spacing systems',
+    
+    // Components page
+    'components.title': 'UI Components',
+    'components.subtitle': 'Ready-to-use components for your projects',
+    
+    // Navigation page
+    'navigation.title': 'Navigation',
+    'navigation.subtitle': 'Responsive headers, navbars, bottom navigation and sidebars',
+    
+    // Forms page
+    'forms.title': 'Forms',
+    'forms.subtitle': 'Inputs, modals, toasts, accordions and interactive components',
+    
+    // Atomic Design page
+    'atomic.title': 'Atomic Design',
+    'atomic.subtitle': 'Atomic Design is a methodology created by Brad Frost to create design systems in a modular and scalable way.',
+    
+    // Naming page
+    'naming.title': 'Naming Conventions',
+    'naming.subtitle': 'Organization, standardization and best practices for design systems',
+    
+    // Guidelines page
+    'guidelines.title': 'Nuri Guidelines',
+    'guidelines.subtitle': 'Fundamental principles and best practices for user experience',
+    
+    // Documentation page
+    'documentation.title': 'User Manual',
+    'documentation.subtitle': 'How to use this design system effectively',
+    
+    // Developer Guide page
+    'developer.title': 'Developer Guide',
+    'developer.subtitle': 'Best practices for implementing the Nuri Design System and collaborating effectively with the design team.',
+    
+    // Figma pages
+    'figma.title': 'Figma Plus',
+    'figma.subtitle': 'Templates and resources for Figma',
+    'figmaIntegration.title': 'Figma Integration',
+    'figmaIntegration.subtitle': 'Sync NDS tokens with your Figma file using the Tokens Studio plugin.',
     
     // Common
     'common.copied': 'Copied!',
     'common.copy': 'Copy',
+    'common.copyCode': 'Copy code',
     'common.download': 'Download',
     'common.seeMore': 'Learn more',
     'common.close': 'Close',
+    'common.search': 'Search',
+    'common.filter': 'Filter',
+    'common.all': 'All',
   }
 };
 

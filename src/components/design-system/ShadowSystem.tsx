@@ -126,14 +126,9 @@ const ShadowSystem = () => {
 
   return (
     <div className="space-y-8 max-w-7xl">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="page-header-icon">
-          <Sparkles size={16} />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">Sistema de Sombras</h2>
-          <p className="text-muted-foreground">Elevação e profundidade através de sombras consistentes</p>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Sombras</h1>
+        <p className="text-lg text-muted-foreground">Elevação e profundidade através de sombras consistentes</p>
       </div>
 
       {renderShadowGrid(shadowLevels, 'Elevação Padrão')}

@@ -338,14 +338,9 @@ const FormSystem = () => {
 
   return (
     <div className="space-y-8 max-w-7xl">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="page-header-icon">
-          <FileText size={16} />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">Sistema de Formulários</h2>
-          <p className="text-muted-foreground">Inputs, modais, toasts, accordions e componentes interativos</p>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Formulários</h1>
+        <p className="text-lg text-muted-foreground">Inputs, modais, toasts, accordions e componentes interativos</p>
       </div>
 
       {/* Input Components */}
@@ -359,14 +354,14 @@ const FormSystem = () => {
                 <h4 className="font-medium text-neutral-800 dark:text-white">{input.name}</h4>
                 <button
                   onClick={() => copyToClipboard(input.code, input.name)}
-                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-brand-500 hover:bg-brand-600 rounded-lg transition-all duration-200"
+                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-background bg-foreground hover:bg-foreground/90 rounded-lg transition-all duration-200"
                 >
                   {copiedComponent === input.name ? (
                     <Check size={12} />
                   ) : (
                     <Copy size={12} />
                   )}
-                  Copy
+                  Copiar código
                 </button>
               </div>
               
@@ -398,17 +393,17 @@ const FormSystem = () => {
           {advancedComponents.map((comp) => (
             <div key={comp.name} className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
               <div className="flex items-center justify-between mb-4">
-                <h4 className="font-medium text-neutral-800 dark:text-white">{comp.name}</h4>
+                <h4 className="font-medium text-foreground">{comp.name}</h4>
                 <button
                   onClick={() => copyToClipboard(comp.code, comp.name)}
-                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-brand-500 hover:bg-brand-600 rounded-lg transition-all duration-200"
+                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-background bg-foreground hover:bg-foreground/90 rounded-lg transition-all duration-200"
                 >
                   {copiedComponent === comp.name ? (
                     <Check size={12} />
                   ) : (
                     <Copy size={12} />
                   )}
-                  Copy
+                  Copiar código
                 </button>
               </div>
               

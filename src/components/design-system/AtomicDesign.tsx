@@ -152,14 +152,9 @@ const AtomicDesign = () => {
     <div className="space-y-16">
       {/* Header */}
       <div className="max-w-2xl">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="page-header-icon">
-            <Layers size={20} />
-          </div>
-          <h1 className="text-4xl font-bold text-foreground tracking-tight">
-            Atomic Design
-          </h1>
-        </div>
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">
+          Atomic Design
+        </h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
           Atomic Design é uma metodologia criada por Brad Frost para criar sistemas de design de forma modular e escalável. 
           A abordagem divide a interface em cinco níveis distintos de abstração.

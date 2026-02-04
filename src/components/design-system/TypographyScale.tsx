@@ -230,14 +230,9 @@ Font Family: Inter`;
 
   return (
     <div className="space-y-8 max-w-7xl">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="page-header-icon">
-          <Type size={16} />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">Sistema de Tipografia</h2>
-          <p className="text-muted-foreground">Escala tipográfica hierárquica responsiva com especificações para Figma</p>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Tipografia</h1>
+        <p className="text-lg text-muted-foreground">Escala tipográfica hierárquica responsiva com especificações para Figma</p>
       </div>
 
       {/* Font Family Info */}
@@ -312,7 +307,7 @@ Font Family: Inter`;
                   </button>
                   <button
                     onClick={() => copyFigmaSpecs(item.figmaSpecs, item.name)}
-                    className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-brand-500 hover:bg-brand-600 rounded-lg transition-all duration-200"
+                    className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-background bg-foreground hover:bg-foreground/90 rounded-lg transition-all duration-200"
                   >
                     <Copy size={12} />
                     Figma
@@ -373,7 +368,7 @@ Font Family: Inter`;
                   </button>
                   <button
                     onClick={() => copyFigmaSpecs(item.figmaSpecs, item.name)}
-                    className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-brand-500 hover:bg-brand-600 rounded-lg transition-all duration-200"
+                    className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-background bg-foreground hover:bg-foreground/90 rounded-lg transition-all duration-200"
                   >
                     <Copy size={12} />
                     Figma

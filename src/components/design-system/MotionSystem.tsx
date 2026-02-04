@@ -129,16 +129,9 @@ const MotionSystem = () => {
     <div className="space-y-16">
       {/* Header */}
       <div className="max-w-2xl">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-foreground rounded-lg flex items-center justify-center">
-            <Play size={20} className="text-background" />
-          </div>
-          <div>
-            <h1 className="text-4xl font-bold text-foreground tracking-tight">
-              {t('motion.title')}
-            </h1>
-          </div>
-        </div>
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">
+          {t('motion.title')}
+        </h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
           {t('motion.subtitle')}
         </p>

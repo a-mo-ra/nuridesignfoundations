@@ -283,14 +283,9 @@ const NavigationSystem = () => {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center gap-3 mb-8">
-        <div className="page-header-icon">
-          <Code size={16} />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">Sistema de Navegação</h2>
-          <p className="text-muted-foreground">Headers, navbars, bottom navigation e sidebars responsivos</p>
-        </div>
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Navegação</h1>
+        <p className="text-lg text-muted-foreground">Headers, navbars, bottom navigation e sidebars responsivos</p>
       </div>
 
       {/* Device Guidelines */}
@@ -356,14 +351,14 @@ const NavigationSystem = () => {
             </div>
             <button
               onClick={() => copyToClipboard(nav.code, nav.name)}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-background bg-foreground hover:bg-foreground/90 rounded-lg transition-all duration-200"
             >
               {copiedComponent === nav.name ? (
-                <Check size={16} className="text-white" />
+                <Check size={16} />
               ) : (
                 <Copy size={16} />
               )}
-              Copy Code
+              Copiar código
             </button>
           </div>
 

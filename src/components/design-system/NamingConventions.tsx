@@ -231,14 +231,9 @@ const NamingConventions = () => {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="page-header-icon">
-          <FileText size={16} />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">Convenções de Nomenclatura e Tokens</h2>
-          <p className="text-muted-foreground">Organização, padronização e boas práticas para design systems</p>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Nomenclatura</h1>
+        <p className="text-lg text-muted-foreground">Organização, padronização e boas práticas para design systems</p>
       </div>
 
       {/* Layer Naming Conventions */}
