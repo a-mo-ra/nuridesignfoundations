@@ -14,16 +14,16 @@ const FigmaIntegration = () => {
     "core": {
       "colors": {
         "nds": {
-          "50": { "value": "#f8fafc", "type": "color" },
-          "100": { "value": "#f1f5f9", "type": "color" },
-          "200": { "value": "#e2e8f0", "type": "color" },
-          "300": { "value": "#94a3b8", "type": "color" },
-          "400": { "value": "#64748b", "type": "color" },
-          "500": { "value": "#475569", "type": "color" },
-          "600": { "value": "#3d4a5c", "type": "color" },
-          "700": { "value": "#334155", "type": "color" },
-          "800": { "value": "#1e293b", "type": "color" },
-          "900": { "value": "#0f172a", "type": "color" }
+          "50": { "value": "#f5f0ff", "type": "color" },
+          "100": { "value": "#ede5ff", "type": "color" },
+          "200": { "value": "#dcceff", "type": "color" },
+          "300": { "value": "#c4a8ff", "type": "color" },
+          "400": { "value": "#a873ff", "type": "color" },
+          "500": { "value": "#4D0C83", "type": "color" },
+          "600": { "value": "#5b0da3", "type": "color" },
+          "700": { "value": "#4a0c83", "type": "color" },
+          "800": { "value": "#2e0652", "type": "color" },
+          "900": { "value": "#1a0336", "type": "color" }
         },
         "neutral": {
           "white": { "value": "#ffffff", "type": "color" },

@@ -221,14 +221,9 @@ const ComponentLibrary = () => {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center gap-3 mb-8">
-        <div className="page-header-icon">
-          <Grid size={16} />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">Biblioteca de Componentes</h2>
-          <p className="text-muted-foreground">Componentes prontos para usar em seus projetos</p>
-        </div>
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">UI Components</h1>
+        <p className="text-lg text-muted-foreground">Componentes prontos para usar em seus projetos</p>
       </div>
 
       {renderComponentSection('Botões', buttonVariants)}

@@ -65,25 +65,22 @@ const DesignGuidelines = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-6">
-        <div className="page-header-icon">
-          <BookOpen size={16} />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">Diretrizes Nuri</h2>
-          <p className="text-muted-foreground">Princípios fundamentais e melhores práticas para experiência do usuário</p>
-        </div>
+      <div className="mb-6">
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Diretrizes Nuri</h1>
+        <p className="text-lg text-muted-foreground">Princípios fundamentais e melhores práticas para experiência do usuário</p>
       </div>
 
       {/* Por que um Sistema de Design? */}
-      <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-gray-200 dark:border-gray-700">
+      <div className="bg-card rounded-xl p-6 shadow-elevation-2 border border-border">
         <button
           onClick={() => toggleSection('why-design-system')}
           className="w-full flex items-center justify-between text-left"
         >
           <div className="flex items-center gap-3">
-            <Layers size={20} className="text-purple-600" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Por que um Sistema de Design?</h3>
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+              <Layers size={16} className="text-background" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">Por que um Sistema de Design?</h3>
           </div>
           <div className={`transform transition-transform ${expandedSection === 'why-design-system' ? 'rotate-180' : ''}`}>
             ▼
@@ -143,14 +140,16 @@ const DesignGuidelines = () => {
       </div>
 
       {/* Diretrizes de Acessibilidade WCAG 2.2 */}
-      <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-gray-200 dark:border-gray-700">
+      <div className="bg-card rounded-xl p-6 shadow-elevation-2 border border-border">
         <button
           onClick={() => toggleSection('accessibility')}
           className="w-full flex items-center justify-between text-left"
         >
           <div className="flex items-center gap-3">
-            <Shield size={20} className="text-purple-600" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Diretrizes de Acessibilidade WCAG 2.2</h3>
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+              <Shield size={16} className="text-background" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">Diretrizes de Acessibilidade WCAG 2.2</h3>
           </div>
           <div className={`transform transition-transform ${expandedSection === 'accessibility' ? 'rotate-180' : ''}`}>
             ▼
@@ -298,14 +297,16 @@ const DesignGuidelines = () => {
       </div>
 
       {/* Fundamentos */}
-      <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-gray-200 dark:border-gray-700">
+      <div className="bg-card rounded-xl p-6 shadow-elevation-2 border border-border">
         <button
           onClick={() => toggleSection('fundamentals')}
           className="w-full flex items-center justify-between text-left"
         >
           <div className="flex items-center gap-3">
-            <Target size={20} className="text-blue-600" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Fundamentos UX</h3>
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+              <Target size={16} className="text-background" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">Fundamentos UX</h3>
           </div>
           <div className={`transform transition-transform ${expandedSection === 'fundamentals' ? 'rotate-180' : ''}`}>
             ▼
@@ -364,14 +365,16 @@ const DesignGuidelines = () => {
       </div>
 
       {/* Heurísticas de Nielsen */}
-      <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-gray-200 dark:border-gray-700">
+      <div className="bg-card rounded-xl p-6 shadow-elevation-2 border border-border">
         <button
           onClick={() => toggleSection('heuristics')}
           className="w-full flex items-center justify-between text-left"
         >
           <div className="flex items-center gap-3">
-            <Lightbulb size={20} className="text-purple-600" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">10 Heurísticas de Nielsen</h3>
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+              <Lightbulb size={16} className="text-background" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">10 Heurísticas de Nielsen</h3>
           </div>
           <div className={`transform transition-transform ${expandedSection === 'heuristics' ? 'rotate-180' : ''}`}>
             ▼
@@ -432,14 +435,16 @@ const DesignGuidelines = () => {
       </div>
 
       {/* Processo de Design */}
-      <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-gray-200 dark:border-gray-700">
+      <div className="bg-card rounded-xl p-6 shadow-elevation-2 border border-border">
         <button
           onClick={() => toggleSection('process')}
           className="w-full flex items-center justify-between text-left"
         >
           <div className="flex items-center gap-3">
-            <Heart size={20} className="text-red-600" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Processo de Design</h3>
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+              <Heart size={16} className="text-background" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">Processo de Design</h3>
           </div>
           <div className={`transform transition-transform ${expandedSection === 'process' ? 'rotate-180' : ''}`}>
             ▼
@@ -497,14 +502,16 @@ const DesignGuidelines = () => {
       </div>
 
       {/* Checklist de Qualidade */}
-      <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-gray-200 dark:border-gray-700">
+      <div className="bg-card rounded-xl p-6 shadow-elevation-2 border border-border">
         <button
           onClick={() => toggleSection('checklist')}
           className="w-full flex items-center justify-between text-left"
         >
           <div className="flex items-center gap-3">
-            <CheckCircle size={20} className="text-green-600" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Checklist de Qualidade UX</h3>
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+              <CheckCircle size={16} className="text-background" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">Checklist de Qualidade UX</h3>
           </div>
           <div className={`transform transition-transform ${expandedSection === 'checklist' ? 'rotate-180' : ''}`}>
             ▼
@@ -591,14 +598,16 @@ const DesignGuidelines = () => {
       </div>
 
       {/* Referências e Fontes */}
-      <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-gray-200 dark:border-gray-700">
+      <div className="bg-card rounded-xl p-6 shadow-elevation-2 border border-border">
         <button
           onClick={() => toggleSection('references')}
           className="w-full flex items-center justify-between text-left"
         >
           <div className="flex items-center gap-3">
-            <BookOpen size={20} className="text-indigo-600" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Referências e Fontes</h3>
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
+              <BookOpen size={16} className="text-background" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">Referências e Fontes</h3>
           </div>
           <div className={`transform transition-transform ${expandedSection === 'references' ? 'rotate-180' : ''}`}>
             ▼
