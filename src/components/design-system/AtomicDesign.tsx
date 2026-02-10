@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle, Square, Hexagon, Box, Layout, Layers } from 'lucide-react';
+import { Circle, Square, Hexagon, Box, Layout, Layers, ChevronRight } from 'lucide-react';
 
 const AtomicDesign = () => {
   const atomicLevels = [
@@ -11,8 +11,8 @@ const AtomicDesign = () => {
       visual: (
         <div className="flex items-center justify-center gap-4 p-6">
           <div className="w-8 h-8 rounded-full bg-primary" />
-          <button className="px-4 py-2 bg-foreground text-background rounded-lg text-sm font-medium">Button</button>
-          <div className="w-20 h-8 bg-muted rounded border border-border" />
+          <button className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium">Button</button>
+          <div className="w-20 h-8 bg-primary/20 rounded border border-primary/30" />
         </div>
       )
     },
@@ -23,14 +23,14 @@ const AtomicDesign = () => {
       examples: ['Campo de busca', 'Card de produto', 'Item de menu', 'Avatar com nome', 'Toggle com label'],
       visual: (
         <div className="flex items-center justify-center p-6">
-          <div className="flex items-center bg-muted rounded-lg border border-border overflow-hidden">
+          <div className="flex items-center bg-primary/10 rounded-lg border border-primary/20 overflow-hidden">
             <input 
               type="text" 
               placeholder="Search..." 
               className="px-4 py-2 bg-transparent text-sm outline-none w-40"
               readOnly
             />
-            <button className="px-4 py-2 bg-foreground text-background text-sm font-medium">
+            <button className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium">
               Buscar
             </button>
           </div>
@@ -44,16 +44,16 @@ const AtomicDesign = () => {
       examples: ['Header', 'Footer', 'Card de artigo', 'Formulário completo', 'Sidebar', 'Modal'],
       visual: (
         <div className="p-4">
-          <div className="bg-card border border-border rounded-lg overflow-hidden">
-            <div className="h-20 bg-muted flex items-center justify-center">
-              <div className="w-16 h-16 bg-foreground/10 rounded-lg" />
+          <div className="bg-card border border-primary/20 rounded-lg overflow-hidden">
+            <div className="h-20 bg-primary/10 flex items-center justify-center">
+              <div className="w-16 h-16 bg-primary/20 rounded-lg" />
             </div>
             <div className="p-4 space-y-2">
-              <div className="h-4 bg-muted rounded w-3/4" />
-              <div className="h-3 bg-muted/60 rounded w-1/2" />
+              <div className="h-4 bg-primary/15 rounded w-3/4" />
+              <div className="h-3 bg-primary/10 rounded w-1/2" />
               <div className="flex gap-2 mt-3">
-                <div className="h-8 bg-foreground rounded-lg flex-1" />
-                <div className="h-8 bg-muted rounded-lg w-8" />
+                <div className="h-8 bg-primary rounded-lg flex-1" />
+                <div className="h-8 bg-primary/20 rounded-lg w-8" />
               </div>
             </div>
           </div>
@@ -67,19 +67,19 @@ const AtomicDesign = () => {
       examples: ['Layout de página', 'Grid de produtos', 'Layout de dashboard', 'Layout de blog'],
       visual: (
         <div className="p-4">
-          <div className="bg-card border border-border rounded-lg overflow-hidden">
-            <div className="h-6 bg-muted border-b border-border" />
+          <div className="bg-card border border-primary/20 rounded-lg overflow-hidden">
+            <div className="h-6 bg-primary/15 border-b border-primary/20" />
             <div className="flex">
-              <div className="w-1/4 bg-muted/50 p-2 space-y-1 border-r border-border">
-                <div className="h-2 bg-muted rounded" />
-                <div className="h-2 bg-muted rounded w-3/4" />
-                <div className="h-2 bg-muted rounded w-1/2" />
+              <div className="w-1/4 bg-primary/5 p-2 space-y-1 border-r border-primary/20">
+                <div className="h-2 bg-primary/20 rounded" />
+                <div className="h-2 bg-primary/15 rounded w-3/4" />
+                <div className="h-2 bg-primary/10 rounded w-1/2" />
               </div>
               <div className="flex-1 p-2 grid grid-cols-2 gap-1">
-                <div className="h-8 bg-muted rounded" />
-                <div className="h-8 bg-muted rounded" />
-                <div className="h-8 bg-muted rounded" />
-                <div className="h-8 bg-muted rounded" />
+                <div className="h-8 bg-primary/10 rounded" />
+                <div className="h-8 bg-primary/10 rounded" />
+                <div className="h-8 bg-primary/10 rounded" />
+                <div className="h-8 bg-primary/10 rounded" />
               </div>
             </div>
           </div>
@@ -93,20 +93,20 @@ const AtomicDesign = () => {
       examples: ['Home page', 'Página de produto', 'Dashboard do usuário', 'Página de checkout'],
       visual: (
         <div className="p-4">
-          <div className="bg-card border border-border rounded-lg overflow-hidden">
-            <div className="h-6 bg-foreground flex items-center px-2 gap-1">
-              <div className="w-2 h-2 bg-background/30 rounded-full" />
-              <div className="w-2 h-2 bg-background/30 rounded-full" />
-              <div className="w-2 h-2 bg-background/30 rounded-full" />
+          <div className="bg-card border border-primary/20 rounded-lg overflow-hidden">
+            <div className="h-6 bg-primary flex items-center px-2 gap-1">
+              <div className="w-2 h-2 bg-primary-foreground/30 rounded-full" />
+              <div className="w-2 h-2 bg-primary-foreground/30 rounded-full" />
+              <div className="w-2 h-2 bg-primary-foreground/30 rounded-full" />
             </div>
             <div className="p-2 space-y-2">
               <div className="h-12 bg-primary/20 rounded flex items-center justify-center">
                 <span className="text-[8px] text-primary font-medium">HERO</span>
               </div>
               <div className="grid grid-cols-3 gap-1">
-                <div className="h-6 bg-muted rounded" />
-                <div className="h-6 bg-muted rounded" />
-                <div className="h-6 bg-muted rounded" />
+                <div className="h-6 bg-primary/10 rounded" />
+                <div className="h-6 bg-primary/10 rounded" />
+                <div className="h-6 bg-primary/10 rounded" />
               </div>
             </div>
           </div>
@@ -196,7 +196,7 @@ const AtomicDesign = () => {
                         {level.examples.map((example) => (
                           <span 
                             key={example}
-                            className="px-3 py-1 bg-muted text-muted-foreground text-sm rounded-full"
+                            className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20"
                           >
                             {example}
                           </span>
@@ -206,7 +206,7 @@ const AtomicDesign = () => {
                   </div>
 
                   {/* Visual Example */}
-                  <div className="bg-muted/30 border-t lg:border-t-0 lg:border-l border-border flex items-center justify-center min-h-[200px]">
+                  <div className="bg-primary/5 border-t lg:border-t-0 lg:border-l border-primary/20 flex items-center justify-center min-h-[200px]">
                     {level.visual}
                   </div>
                 </div>
@@ -236,21 +236,36 @@ const AtomicDesign = () => {
         </div>
       </div>
 
-      {/* Benefits */}
-      <div className="bg-foreground text-background rounded-lg p-8">
-        <h2 className="text-2xl font-semibold mb-6">Por que usar Atomic Design?</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { title: 'Consistência', desc: 'Componentes reutilizáveis garantem uma UI consistente em todo o produto.' },
-            { title: 'Escalabilidade', desc: 'Facilita a adição de novos recursos sem quebrar o design existente.' },
-            { title: 'Manutenção', desc: 'Mudanças em átomos propagam automaticamente para níveis superiores.' },
-            { title: 'Colaboração', desc: 'Vocabulário comum entre designers e desenvolvedores.' }
-          ].map((benefit) => (
-            <div key={benefit.title}>
-              <h3 className="font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-background/70 text-sm">{benefit.desc}</p>
+      {/* Benefits - styled like reference with light purple background and collapsible */}
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-8">
+        <h2 className="text-2xl font-semibold text-foreground mb-6">Por que usar Atomic Design?</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <ChevronRight size={16} className="text-foreground" />
+              <h3 className="font-semibold text-foreground">Benefícios Imediatos</h3>
             </div>
-          ))}
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Componentes reutilizáveis garantem uma UI consistente</li>
+              <li>• Redução de 60% no tempo de busca por componentes</li>
+              <li>• Menor chance de inconsistências visuais</li>
+              <li>• Facilita onboarding de novos designers</li>
+              <li>• Melhora comunicação entre design e desenvolvimento</li>
+            </ul>
+          </div>
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <ChevronRight size={16} className="text-foreground" />
+              <h3 className="font-semibold text-foreground">Benefícios a Longo Prazo</h3>
+            </div>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Escalabilidade do design system</li>
+              <li>• Manutenção mais eficiente</li>
+              <li>• Facilita mudanças de tema/rebrand</li>
+              <li>• Base sólida para automações</li>
+              <li>• Vocabulário comum entre designers e desenvolvedores</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

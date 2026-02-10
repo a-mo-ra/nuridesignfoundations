@@ -20,6 +20,7 @@ import AtomicDesign from '@/components/design-system/AtomicDesign';
 import DeveloperGuide from '@/components/design-system/DeveloperGuide';
 import MotionSystem from '@/components/design-system/MotionSystem';
 import QuickAccess from '@/components/design-system/QuickAccess';
+import UXMetricsGuide from '@/components/design-system/UXMetricsGuide';
 
 const IndexContent = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -37,7 +38,7 @@ const IndexContent = () => {
 
   const renderActiveSection = () => {
     if (showGuidelines) {
-      return <DesignGuidelines />;
+      return <DesignGuidelines onNavigate={handleSectionClick} />;
     }
 
     if (showDocumentation) {
@@ -73,6 +74,8 @@ const IndexContent = () => {
         return <NamingConventions />;
       case 'motion':
         return <MotionSystem />;
+      case 'ux-metrics':
+        return <UXMetricsGuide onBack={() => handleGuidelinesClick()} />;
       case 'quick-access':
         return <QuickAccess />;
       case 'developer-guide':
