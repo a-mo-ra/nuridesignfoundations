@@ -30,7 +30,7 @@ const searchData: SearchResult[] = [
   { id: 'forms', label: 'Formulários', labelEn: 'Forms', category: 'Components' },
   { id: 'atomic', label: 'Atomic Design', labelEn: 'Atomic Design', category: 'Patterns' },
   { id: 'naming', label: 'Nomenclatura', labelEn: 'Naming Conventions', category: 'Patterns' },
-  { id: 'motion', label: 'Motion', labelEn: 'Motion', category: 'Patterns' },
+  { id: 'ux-documentation', label: 'Documentação UX', labelEn: 'UX Documentation', category: 'Patterns' },
   { id: 'figma', label: 'Figma Plus', labelEn: 'Figma Plus', category: 'Resources' },
   { id: 'figma-integration', label: 'Integração Figma', labelEn: 'Figma Integration', category: 'Resources' },
   { id: 'developer-guide', label: 'Guia Dev', labelEn: 'Dev Guide', category: 'Resources' },

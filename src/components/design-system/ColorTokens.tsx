@@ -108,25 +108,25 @@ const ColorTokens = () => {
         </p>
       </div>
 
-      {/* Accessibility Alert */}
-      <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl p-5">
+      {/* Accessibility Alert - Green like reference */}
+      <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-xl p-5">
         <div className="flex items-center gap-2 mb-3">
-          <AlertTriangle size={16} className="text-amber-600" />
-          <span className="font-semibold text-amber-800 dark:text-amber-300">Acessibilidade Garantida</span>
+          <CheckCircle size={16} className="text-green-600" />
+          <span className="font-semibold text-green-800 dark:text-green-300">Acessibilidade Garantida</span>
         </div>
-        <p className="text-sm text-amber-700 dark:text-amber-400 mb-3">
+        <p className="text-sm text-green-700 dark:text-green-400 mb-4">
           Todas as combinações de cores foram testadas e atendem aos critérios WCAG 2.1 AA.
         </p>
-        <div className="flex flex-wrap gap-3">
-          <span className="px-3 py-1.5 bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 rounded-lg text-xs font-medium">
-            AA Normal: 4.5:1 mínimo
-          </span>
-          <span className="px-3 py-1.5 bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 rounded-lg text-xs font-medium">
-            AA Grande: 3:1 mínimo
-          </span>
-          <span className="px-3 py-1.5 bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 rounded-lg text-xs font-medium">
-            AAA: 7:1 (ideal)
-          </span>
+        <div className="grid grid-cols-3 gap-3">
+          <div className="px-4 py-3 bg-white dark:bg-black/20 border border-green-200 dark:border-green-700 rounded-lg text-center">
+            <span className="text-sm font-medium text-foreground">AA Normal: 4.5:1 mínimo</span>
+          </div>
+          <div className="px-4 py-3 bg-white dark:bg-black/20 border border-green-200 dark:border-green-700 rounded-lg text-center">
+            <span className="text-sm font-medium text-foreground">AA Grande: 3:1 mínimo</span>
+          </div>
+          <div className="px-4 py-3 bg-white dark:bg-black/20 border border-green-200 dark:border-green-700 rounded-lg text-center">
+            <span className="text-sm font-medium text-foreground">AAA: 7:1 (ideal)</span>
+          </div>
         </div>
       </div>
 
@@ -215,13 +215,16 @@ const ColorTokens = () => {
                       <span className="font-mono text-sm font-medium text-foreground">
                         {color.name}
                       </span>
-                      <span className={`text-xs font-medium ${contrastLevel.color}`}>
-                        {contrastLevel.label}
-                      </span>
                     </div>
                     <p className="text-sm text-muted-foreground truncate">
                       {color.usage}
                     </p>
+                  </div>
+
+                  {/* Contrast Ratios */}
+                  <div className="text-right text-xs text-muted-foreground whitespace-nowrap">
+                    <div>Light: {getContrastRatio(color.light, '#ffffff')}:1</div>
+                    <div>Dark: {getContrastRatio(color.dark, '#000000')}:1</div>
                   </div>
 
                   {/* Values */}
@@ -261,18 +264,18 @@ const ColorTokens = () => {
       ))}
 
       {/* Usage Note */}
-      <div className="bg-foreground text-background rounded-lg p-6">
-        <h3 className="font-semibold mb-3">💡 Como usar os tokens NDS</h3>
+      <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+        <h3 className="font-semibold text-foreground mb-3">💡 Como usar os tokens NDS</h3>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
           <div>
-            <p className="text-background/70 mb-2">CSS Variables:</p>
-            <code className="block bg-background/10 p-3 rounded font-mono text-xs">
+            <p className="text-muted-foreground mb-2">CSS Variables:</p>
+            <code className="block bg-muted p-3 rounded font-mono text-xs text-foreground">
               color: hsl(var(--primary));
             </code>
           </div>
           <div>
-            <p className="text-background/70 mb-2">Tailwind Classes:</p>
-            <code className="block bg-background/10 p-3 rounded font-mono text-xs">
+            <p className="text-muted-foreground mb-2">Tailwind Classes:</p>
+            <code className="block bg-muted p-3 rounded font-mono text-xs text-foreground">
               className="text-primary bg-muted"
             </code>
           </div>

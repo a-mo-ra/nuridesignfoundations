@@ -663,18 +663,7 @@ const DesignGuidelines = ({ onNavigate }: DesignGuidelinesProps = {}) => {
 
       {/* Métricas e KPIs */}
       <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 border border-purple-200 dark:border-gray-700">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Métricas de Sucesso UX</h3>
-          {onNavigate && (
-            <button
-              onClick={() => onNavigate('ux-metrics')}
-              className="flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg text-sm font-medium hover:bg-foreground/90 transition-colors"
-            >
-              Guia Completo de Métricas UX
-              <ExternalLink size={14} />
-            </button>
-          )}
-        </div>
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Métricas de Sucesso UX</h3>
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           <div>
             <h4 className="font-medium text-gray-800 dark:text-white mb-2">Métricas de Tarefa</h4>
@@ -704,6 +693,15 @@ const DesignGuidelines = ({ onNavigate }: DesignGuidelinesProps = {}) => {
             </ul>
           </div>
         </div>
+        {onNavigate && (
+          <button
+            onClick={() => onNavigate('ux-metrics')}
+            className="flex items-center gap-2 mt-6 px-4 py-2 bg-foreground text-background rounded-lg text-sm font-medium hover:bg-foreground/90 transition-colors"
+          >
+            Guia Completo de Métricas UX
+            <ExternalLink size={14} />
+          </button>
+        )}
       </div>
 
       {/* Ferramentas Recomendadas */}

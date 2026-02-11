@@ -60,7 +60,7 @@ const Sidebar = ({
       items: [
         { id: 'atomic', labelKey: 'nav.atomic' },
         { id: 'naming', labelKey: 'nav.naming' },
-        { id: 'motion', labelKey: 'nav.motion' }
+        { id: 'ux-documentation', labelKey: 'nav.uxDocumentation' }
       ]
     },
     {

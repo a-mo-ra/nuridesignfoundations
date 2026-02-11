@@ -18,7 +18,7 @@ import FigmaTemplates from '@/components/design-system/FigmaTemplates';
 import FigmaIntegration from '@/components/design-system/FigmaIntegration';
 import AtomicDesign from '@/components/design-system/AtomicDesign';
 import DeveloperGuide from '@/components/design-system/DeveloperGuide';
-import MotionSystem from '@/components/design-system/MotionSystem';
+import UXDocumentation from '@/components/design-system/UXDocumentation';
 import QuickAccess from '@/components/design-system/QuickAccess';
 import UXMetricsGuide from '@/components/design-system/UXMetricsGuide';
 
@@ -72,8 +72,8 @@ const IndexContent = () => {
         return <AtomicDesign />;
       case 'naming':
         return <NamingConventions />;
-      case 'motion':
-        return <MotionSystem />;
+      case 'ux-documentation':
+        return <UXDocumentation />;
       case 'ux-metrics':
         return <UXMetricsGuide onBack={() => handleGuidelinesClick()} />;
       case 'quick-access':
