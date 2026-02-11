@@ -21,6 +21,7 @@ import DeveloperGuide from '@/components/design-system/DeveloperGuide';
 import UXDocumentation from '@/components/design-system/UXDocumentation';
 import QuickAccess from '@/components/design-system/QuickAccess';
 import UXMetricsGuide from '@/components/design-system/UXMetricsGuide';
+import Microinteractions from '@/components/design-system/Microinteractions';
 
 const IndexContent = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -74,6 +75,8 @@ const IndexContent = () => {
         return <NamingConventions />;
       case 'ux-documentation':
         return <UXDocumentation />;
+      case 'microinteractions':
+        return <Microinteractions />;
       case 'ux-metrics':
         return <UXMetricsGuide onBack={() => handleGuidelinesClick()} />;
       case 'quick-access':

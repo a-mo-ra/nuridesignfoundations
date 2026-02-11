@@ -31,6 +31,7 @@ const searchData: SearchResult[] = [
   { id: 'atomic', label: 'Atomic Design', labelEn: 'Atomic Design', category: 'Patterns' },
   { id: 'naming', label: 'Nomenclatura', labelEn: 'Naming Conventions', category: 'Patterns' },
   { id: 'ux-documentation', label: 'Documentação UX', labelEn: 'UX Documentation', category: 'Patterns' },
+  { id: 'microinteractions', label: 'Microinterações', labelEn: 'Microinteractions', category: 'Patterns' },
   { id: 'figma', label: 'Figma Plus', labelEn: 'Figma Plus', category: 'Resources' },
   { id: 'figma-integration', label: 'Integração Figma', labelEn: 'Figma Integration', category: 'Resources' },
   { id: 'developer-guide', label: 'Guia Dev', labelEn: 'Dev Guide', category: 'Resources' },
