@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { Smartphone, Tablet, Monitor, Copy, Check, ExternalLink, Layers, Move, Maximize2, MinusSquare, LayoutGrid, Menu, User, Search, Home, Settings, Bell, ChevronRight, Image, FileText, ShoppingCart, MessageSquare, BarChart3, Calendar } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';

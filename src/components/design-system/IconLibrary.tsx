@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { 
   Zap, Copy, Check, Heart, Star, User, Mail, Search, Settings, 
   Home, Bell, Calendar, Clock, Download, Upload, Edit, Trash,

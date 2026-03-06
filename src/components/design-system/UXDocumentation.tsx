@@ -1,4 +1,5 @@
 import React from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { ExternalLink, FileText, ArrowRight, Layers, BookOpen, Code, CheckCircle, AlertTriangle } from 'lucide-react';
 
 const UXDocumentation = () => {

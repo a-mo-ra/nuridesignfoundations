@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ShoppingCart, Check, Bell, Heart, Loader2, ChevronDown, ChevronRight,
