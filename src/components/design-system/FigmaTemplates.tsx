@@ -978,6 +978,7 @@ const FigmaTemplates = () => {
           </div>
         </TabsContent>
       </Tabs>
+      <DigitalChecklist />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Copy, Check, Sun, Moon, Eye, AlertTriangle, CheckCircle, Info } from 'lucide-react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { toast } from '@/hooks/use-toast';
 
 const ColorTokens = () => {
@@ -340,6 +341,7 @@ const ColorTokens = () => {
           </p>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

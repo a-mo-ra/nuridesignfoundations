@@ -405,6 +405,7 @@ const NamingConventions = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

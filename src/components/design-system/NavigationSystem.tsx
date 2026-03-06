@@ -435,6 +435,7 @@ const NavigationSystem = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

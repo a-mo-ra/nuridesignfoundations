@@ -453,6 +453,7 @@ Font Family: Inter`;
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

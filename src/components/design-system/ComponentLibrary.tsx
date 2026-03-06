@@ -304,6 +304,7 @@ const ComponentLibrary = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Circle, Square, Hexagon, Box, Layout, Layers, ChevronRight } from 'lucide-react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 
 const AtomicDesign = () => {
   const atomicLevels = [
@@ -268,6 +269,8 @@ const AtomicDesign = () => {
           </div>
         </div>
       </div>
+
+      <DigitalChecklist />
     </div>
   );
 };

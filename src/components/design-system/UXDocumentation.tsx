@@ -316,6 +316,7 @@ export const Disabled: StoryObj<typeof Button> = {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

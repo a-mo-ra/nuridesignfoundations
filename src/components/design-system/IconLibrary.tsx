@@ -231,6 +231,7 @@ const IconLibrary = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

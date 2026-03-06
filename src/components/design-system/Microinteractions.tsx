@@ -1023,6 +1023,7 @@ const Microinteractions = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

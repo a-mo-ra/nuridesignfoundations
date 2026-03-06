@@ -245,6 +245,7 @@ const DeveloperGuide = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

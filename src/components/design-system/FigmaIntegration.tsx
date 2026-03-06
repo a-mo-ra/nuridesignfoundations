@@ -336,6 +336,7 @@ const FigmaIntegration = () => {
           </li>
         </ul>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

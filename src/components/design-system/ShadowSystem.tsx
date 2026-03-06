@@ -179,6 +179,7 @@ const ShadowSystem = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };
