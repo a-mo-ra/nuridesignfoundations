@@ -36,6 +36,7 @@ const searchData: SearchResult[] = [
   { id: 'figma-integration', label: 'Integração Figma', labelEn: 'Figma Integration', category: 'Resources' },
   { id: 'developer-guide', label: 'Guia Dev', labelEn: 'Dev Guide', category: 'Resources' },
   { id: 'quick-access', label: 'Links Externos', labelEn: 'External Links', category: 'Quick Access' },
+  { id: 'ai-guide', label: 'IA para Design', labelEn: 'AI for Design', category: 'Resources' },
 ];
 
 const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, onNavigate }: HeaderProps) => {

@@ -31,7 +31,7 @@ const Sidebar = ({
   onDocumentationClick
 }: SidebarProps) => {
   const { t } = useLanguage();
-  const [openGroups, setOpenGroups] = React.useState<string[]>(['Foundations', 'Components', 'Patterns', 'Resources', 'Quick Access']);
+  const [openGroups, setOpenGroups] = React.useState<string[]>(['Fundamentos', 'Componentes', 'Padrões', 'Recursos', 'Acesso Rápido', 'Foundations', 'Components', 'Patterns', 'Resources', 'Quick Access']);
 
   const navGroups: NavGroup[] = [
     {
@@ -70,7 +70,8 @@ const Sidebar = ({
       items: [
         { id: 'figma', labelKey: 'nav.figma' },
         { id: 'figma-integration', labelKey: 'nav.figmaIntegration' },
-        { id: 'developer-guide', labelKey: 'nav.developerGuide' }
+        { id: 'developer-guide', labelKey: 'nav.developerGuide' },
+        { id: 'ai-guide', labelKey: 'nav.aiGuide' }
       ]
     },
     {

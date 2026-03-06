@@ -22,6 +22,7 @@ import UXDocumentation from '@/components/design-system/UXDocumentation';
 import QuickAccess from '@/components/design-system/QuickAccess';
 import UXMetricsGuide from '@/components/design-system/UXMetricsGuide';
 import Microinteractions from '@/components/design-system/Microinteractions';
+import AIGuide from '@/components/design-system/AIGuide';
 
 const IndexContent = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -83,6 +84,8 @@ const IndexContent = () => {
         return <QuickAccess />;
       case 'developer-guide':
         return <DeveloperGuide />;
+      case 'ai-guide':
+        return <AIGuide />;
       default:
         return <HomePage onNavigate={handleSectionClick} />;
     }
