@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { Book, Copy, Check } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
@@ -268,6 +269,7 @@ const GridSystem = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { Code, GitBranch, FileCode, CheckCircle, AlertTriangle, Lightbulb, Users, BookOpen, Wrench } from 'lucide-react';
 
 const DeveloperGuide = () => {
@@ -245,6 +246,7 @@ const DeveloperGuide = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

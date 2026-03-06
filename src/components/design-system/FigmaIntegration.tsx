@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { Download, Copy, Check, ExternalLink, Plug, Settings, FileJson, Palette, Type, Grid3X3, Square } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
@@ -336,6 +337,7 @@ const FigmaIntegration = () => {
           </li>
         </ul>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

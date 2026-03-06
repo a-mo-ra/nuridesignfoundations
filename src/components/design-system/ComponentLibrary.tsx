@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { Grid, Copy, Check, Heart, Star, User, Search, Figma } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -304,6 +305,7 @@ const ComponentLibrary = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

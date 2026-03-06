@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { Sparkles, Copy, Check } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
@@ -179,6 +180,7 @@ const ShadowSystem = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { FileText, Copy, Check, AlertCircle, X, Search, Calendar, Eye, EyeOff } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
@@ -450,6 +451,7 @@ const FormSystem = () => {
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };

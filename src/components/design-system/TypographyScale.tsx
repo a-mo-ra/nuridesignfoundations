@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { Type, Copy, Check, Smartphone, Tablet, Monitor } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
@@ -453,6 +454,7 @@ Font Family: Inter`;
           </div>
         </div>
       </div>
+      <DigitalChecklist />
     </div>
   );
 };
