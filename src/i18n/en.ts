@@ -36,8 +36,54 @@ export const enTranslations: Record<string, string> = {
   'home.version': 'v2.0',
   'home.title1': 'Learn. Build.',
   'home.title2': 'Evolve.',
-  'home.subtitle': 'Component system, patterns and tokens to support learning and creating accessible and scalable interfaces.',
+  'home.subtitle': 'Free interactive platform for tokens, patterns and best practices, focused on learning and structuring Design Systems.',
   'home.explore': 'Explore',
+
+  // Home - What is Nuri
+  'home.whatIsNuri': 'What is Nuri?',
+  'home.whatIsNuri.tokens.title': 'Design Tokens',
+  'home.whatIsNuri.tokens.desc': 'Colors, typography, shadows and spacing documented with accessibility best practices (WCAG).',
+  'home.whatIsNuri.components.title': 'Components & UI',
+  'home.whatIsNuri.components.desc': 'Reusable component library with variants, states and usage guidelines.',
+  'home.whatIsNuri.patterns.title': 'Patterns & Documentation',
+  'home.whatIsNuri.patterns.desc': 'Atomic Design, naming conventions, UX documentation and success metrics.',
+  'home.whatIsNuri.ai.title': 'AI & Tools',
+  'home.whatIsNuri.ai.desc': 'AI usage guides for design, Figma integration, MCP and developer resources.',
+
+  // Home - How to use
+  'home.howToUse': 'How to use the platform',
+  'home.howToUse.subtitle': 'Four steps to make the most of Nuri as a study tool and reference.',
+  'home.howToUse.explore.title': 'Explore',
+  'home.howToUse.explore.desc': 'Browse the sections and discover the documented foundations, components and patterns.',
+  'home.howToUse.understand.title': 'Understand',
+  'home.howToUse.understand.desc': 'Read the guidelines, understand the why behind each design decision.',
+  'home.howToUse.apply.title': 'Apply',
+  'home.howToUse.apply.desc': 'Use the tokens, patterns and examples as reference in your own projects.',
+  'home.howToUse.build.title': 'Build',
+  'home.howToUse.build.desc': 'Structure your own library based on what you learned. Evolve continuously.',
+
+  // Home - What you'll find
+  'home.whatYouFind': 'What you\'ll find',
+  'home.whatYouFind.subtitle': 'Browse foundations, components, patterns and resources to deepen your knowledge.',
+
+  // Home - Story
+  'home.story.badge': 'The story behind',
+  'home.story.title': 'From a personal need to shared learning',
+  'home.story.p1': 'Nuri was born from my journey as a digital product designer. While studying and working with Design Systems, I realized there was a lack of a practical, interactive and free resource that brought together everything I needed to learn in one place.',
+  'home.story.p2': 'With the help of AI tools like Lovable, I transformed that need into a living platform — a space where anyone can explore tokens, components, patterns and best practices in a hands-on way.',
+  'home.story.p3': 'More than a design system, Nuri is a strategic product: a shared learning tool that constantly evolves with new references, examples and guidelines.',
+  'home.story.quote': '"Nuri" means "world" in Korean — and that\'s exactly the idea: to create a universe of knowledge accessible to everyone.',
+  'home.story.name': 'Brenda Moreno (Bê)',
+  'home.story.role': 'UX, UI & Product Designer',
+  'home.story.bio': 'Digital product designer for 2 years, driven by curiosity, creativity and the drive to transform. Creator of Nuri Design Foundations — a free and interactive platform for practical and collaborative study about Design Systems.',
+
+  // Home - CTA
+  'home.cta.title': 'Let\'s evolve together?',
+  'home.cta.subtitle': 'Nuri is a shared, free and accessible learning space. Start exploring now.',
+  'home.cta.button': 'Start exploring',
+
+  // Home - Copyright
+  'home.copyright': '© 2026 Nuri Design Foundations. All rights reserved.',
 
   // Home card previews
   'home.preview.colors': 'NDS palette, semantic tokens, WCAG contrast, dark/light mode',

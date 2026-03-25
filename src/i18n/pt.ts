@@ -36,8 +36,54 @@ export const ptTranslations: Record<string, string> = {
   'home.version': 'v2.0',
   'home.title1': 'Aprenda. Construa.',
   'home.title2': 'Evolua.',
-  'home.subtitle': 'Sistema de componentes, padrões e tokens para apoiar o aprendizado e a criação de interfaces acessíveis e escaláveis.',
+  'home.subtitle': 'Plataforma gratuita e interativa de tokens, padrões e boas práticas, com foco em aprendizagem e estruturação de Design System.',
   'home.explore': 'Explorar',
+
+  // Home - What is Nuri
+  'home.whatIsNuri': 'O que é a Nuri?',
+  'home.whatIsNuri.tokens.title': 'Design Tokens',
+  'home.whatIsNuri.tokens.desc': 'Cores, tipografia, sombras e espaçamentos documentados com boas práticas de acessibilidade (WCAG).',
+  'home.whatIsNuri.components.title': 'Componentes & UI',
+  'home.whatIsNuri.components.desc': 'Biblioteca de componentes reutilizáveis com variantes, estados e diretrizes de uso.',
+  'home.whatIsNuri.patterns.title': 'Padrões & Documentação',
+  'home.whatIsNuri.patterns.desc': 'Atomic Design, convenções de nomenclatura, documentação UX e métricas de sucesso.',
+  'home.whatIsNuri.ai.title': 'IA & Ferramentas',
+  'home.whatIsNuri.ai.desc': 'Guias de uso de IA no design, integração Figma, MCP e recursos para desenvolvedores.',
+
+  // Home - How to use
+  'home.howToUse': 'Como usar a plataforma',
+  'home.howToUse.subtitle': 'Quatro passos para aproveitar ao máximo o Nuri como ferramenta de estudo e referência.',
+  'home.howToUse.explore.title': 'Explore',
+  'home.howToUse.explore.desc': 'Navegue pelas seções e descubra os fundamentos, componentes e padrões documentados.',
+  'home.howToUse.understand.title': 'Entenda',
+  'home.howToUse.understand.desc': 'Leia as diretrizes, entenda o porquê por trás de cada decisão de design.',
+  'home.howToUse.apply.title': 'Aplique',
+  'home.howToUse.apply.desc': 'Use os tokens, padrões e exemplos como referência nos seus próprios projetos.',
+  'home.howToUse.build.title': 'Construa',
+  'home.howToUse.build.desc': 'Estruture sua própria library com base no que aprendeu. Evolua continuamente.',
+
+  // Home - What you'll find
+  'home.whatYouFind': 'O que você vai encontrar',
+  'home.whatYouFind.subtitle': 'Navegue por fundamentos, componentes, padrões e recursos para aprofundar seu conhecimento.',
+
+  // Home - Story
+  'home.story.badge': 'A história por trás',
+  'home.story.title': 'De uma necessidade pessoal a um aprendizado compartilhado',
+  'home.story.p1': 'O Nuri nasceu da minha jornada como designer de produtos digitais. Enquanto estudava e trabalhava com Design Systems, percebi que faltava um recurso prático, interativo e gratuito que reunisse tudo o que eu precisava aprender em um só lugar.',
+  'home.story.p2': 'Com a ajuda de ferramentas de IA como o Lovable, transformei essa necessidade em uma plataforma viva — um espaço onde qualquer pessoa pode explorar tokens, componentes, padrões e boas práticas de forma hands-on.',
+  'home.story.p3': 'Mais do que um design system, o Nuri é um produto estratégico: uma ferramenta de aprendizado compartilhado que evolui constantemente com novas referências, exemplos e guidelines.',
+  'home.story.quote': '"Nuri" significa "mundo" em coreano — e a ideia é justamente essa: criar um universo de conhecimento acessível para todos.',
+  'home.story.name': 'Brenda Moreno (Bê)',
+  'home.story.role': 'UX, UI & Product Designer',
+  'home.story.bio': 'Designer de produtos digitais há 2 anos, movida pela curiosidade, pela criatividade e pelo impulso de transformar. Criadora do Nuri Design Foundations — uma plataforma gratuita e interativa de estudo prático e colaborativo sobre Design Systems.',
+
+  // Home - CTA
+  'home.cta.title': 'Vamos evoluir juntos?',
+  'home.cta.subtitle': 'O Nuri é um espaço de aprendizado compartilhado, gratuito e acessível. Comece a explorar agora.',
+  'home.cta.button': 'Começar a explorar',
+
+  // Home - Copyright
+  'home.copyright': '© 2026 Nuri Design Foundations. Todos os direitos reservados.',
 
   // Home card previews
   'home.preview.colors': 'Paleta NDS, tokens semânticos, contraste WCAG, dark/light mode',
