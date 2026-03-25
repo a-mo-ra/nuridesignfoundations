@@ -30,6 +30,8 @@ const IndexContent = () => {
   const [showDocumentation, setShowDocumentation] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
+  const isHome = activeSection === 'home' && !showGuidelines && !showDocumentation;
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -39,55 +41,30 @@ const IndexContent = () => {
   }, [darkMode]);
 
   const renderActiveSection = () => {
-    if (showGuidelines) {
-      return <DesignGuidelines onNavigate={handleSectionClick} />;
-    }
-
-    if (showDocumentation) {
-      return <DocumentationGuide />;
-    }
+    if (showGuidelines) return <DesignGuidelines onNavigate={handleSectionClick} />;
+    if (showDocumentation) return <DocumentationGuide />;
 
     switch (activeSection) {
-      case 'home':
-        return <HomePage onNavigate={handleSectionClick} />;
-      case 'colors':
-        return <ColorTokens />;
-      case 'typography':
-        return <TypographyScale />;
-      case 'components':
-        return <ComponentLibrary />;
-      case 'shadows':
-        return <ShadowSystem />;
-      case 'icons':
-        return <IconLibrary />;
-      case 'grid':
-        return <GridSystem />;
-      case 'navigation':
-        return <NavigationSystem />;
-      case 'forms':
-        return <FormSystem />;
-      case 'figma':
-        return <FigmaTemplates />;
-      case 'figma-integration':
-        return <FigmaIntegration />;
-      case 'atomic':
-        return <AtomicDesign />;
-      case 'naming':
-        return <NamingConventions />;
-      case 'ux-documentation':
-        return <UXDocumentation />;
-      case 'microinteractions':
-        return <Microinteractions />;
-      case 'ux-metrics':
-        return <UXMetricsGuide onBack={() => handleGuidelinesClick()} />;
-      case 'quick-access':
-        return <QuickAccess />;
-      case 'developer-guide':
-        return <DeveloperGuide />;
-      case 'ai-guide':
-        return <AIGuide />;
-      default:
-        return <HomePage onNavigate={handleSectionClick} />;
+      case 'home': return <HomePage onNavigate={handleSectionClick} />;
+      case 'colors': return <ColorTokens />;
+      case 'typography': return <TypographyScale />;
+      case 'components': return <ComponentLibrary />;
+      case 'shadows': return <ShadowSystem />;
+      case 'icons': return <IconLibrary />;
+      case 'grid': return <GridSystem />;
+      case 'navigation': return <NavigationSystem />;
+      case 'forms': return <FormSystem />;
+      case 'figma': return <FigmaTemplates />;
+      case 'figma-integration': return <FigmaIntegration />;
+      case 'atomic': return <AtomicDesign />;
+      case 'naming': return <NamingConventions />;
+      case 'ux-documentation': return <UXDocumentation />;
+      case 'microinteractions': return <Microinteractions />;
+      case 'ux-metrics': return <UXMetricsGuide onBack={() => handleGuidelinesClick()} />;
+      case 'quick-access': return <QuickAccess />;
+      case 'developer-guide': return <DeveloperGuide />;
+      case 'ai-guide': return <AIGuide />;
+      default: return <HomePage onNavigate={handleSectionClick} />;
     }
   };
 
@@ -105,16 +82,16 @@ const IndexContent = () => {
     setActiveSection(sectionId);
     setShowGuidelines(false);
     setShowDocumentation(false);
+    window.scrollTo(0, 0);
   };
 
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
-  };
+  const handleDarkModeToggle = () => setDarkMode(!darkMode);
 
   const handleLogoClick = () => {
     setActiveSection('home');
     setShowGuidelines(false);
     setShowDocumentation(false);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -125,23 +102,26 @@ const IndexContent = () => {
         onDarkModeToggle={handleDarkModeToggle}
         onLogoClick={handleLogoClick}
         onNavigate={handleSectionClick}
+        isHome={isHome}
       />
       
       <div className="flex">
-        {/* Sidebar */}
-        <Sidebar 
-          activeSection={activeSection}
-          onSectionClick={handleSectionClick}
-          showGuidelines={showGuidelines}
-          showDocumentation={showDocumentation}
-          onGuidelinesClick={handleGuidelinesClick}
-          onDocumentationClick={handleDocumentationClick}
-        />
+        {/* Sidebar - hidden on home */}
+        {!isHome && (
+          <Sidebar 
+            activeSection={activeSection}
+            onSectionClick={handleSectionClick}
+            showGuidelines={showGuidelines}
+            showDocumentation={showDocumentation}
+            onGuidelinesClick={handleGuidelinesClick}
+            onDocumentationClick={handleDocumentationClick}
+          />
+        )}
 
         {/* Main Content */}
-        <main className="flex-1 p-8 lg:p-12">
-          <div className="max-w-5xl mx-auto">
-            <div className="animate-fade-in">
+        <main className={`flex-1 ${isHome ? '' : 'p-8 lg:p-12'}`}>
+          <div className={isHome ? '' : 'max-w-5xl mx-auto'}>
+            <div className={isHome ? '' : 'animate-fade-in'}>
               {renderActiveSection()}
             </div>
           </div>
