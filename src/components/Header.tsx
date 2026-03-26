@@ -197,15 +197,13 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
               </button>
 
               {/* Mobile menu button */}
-              {isHome && (
-                <button
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="lg:hidden w-9 h-9 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
-                  aria-label="Menu"
-                >
-                  <Menu size={18} />
-                </button>
-              )}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden w-9 h-9 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                aria-label="Menu"
+              >
+                <Menu size={18} />
+              </button>
             </div>
           </div>
         </div>
