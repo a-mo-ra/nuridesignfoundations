@@ -111,7 +111,7 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
               className="flex items-center gap-1.5 hover:opacity-80 transition-opacity shrink-0"
             >
               <img 
-                src={darkMode ? nuriLogoPurple : nuriLogoBlack} 
+                src={darkMode ? nuriLogoDark : nuriLogoLight} 
                 alt="Nuri Design Foundations" 
                 className="w-8 h-8 object-contain" 
               />
