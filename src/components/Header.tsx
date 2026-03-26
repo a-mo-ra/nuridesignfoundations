@@ -75,6 +75,8 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setIsSearchFocused(false);
+        setIsSearchOpen(false);
+        setSearchQuery('');
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
