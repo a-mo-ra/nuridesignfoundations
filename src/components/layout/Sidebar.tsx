@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, ChevronRight, Info, FileText, ExternalLink } from 'lucide-react';
+import { ChevronDown, ChevronRight, Info, FileText, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SidebarProps {
@@ -9,6 +9,8 @@ interface SidebarProps {
   showDocumentation: boolean;
   onGuidelinesClick: () => void;
   onDocumentationClick: () => void;
+  collapsed?: boolean;
+  onToggleCollapse?: () => void;
 }
 
 interface NavItem {
@@ -28,7 +30,9 @@ const Sidebar = ({
   showGuidelines,
   showDocumentation,
   onGuidelinesClick,
-  onDocumentationClick
+  onDocumentationClick,
+  collapsed = false,
+  onToggleCollapse
 }: SidebarProps) => {
   const { t } = useLanguage();
   const [openGroups, setOpenGroups] = React.useState<string[]>(['Fundamentos', 'Componentes', 'Padrões', 'Recursos', 'Acesso Rápido', 'Foundations', 'Components', 'Patterns', 'Resources', 'Quick Access']);
@@ -93,8 +97,34 @@ const Sidebar = ({
 
   const isGroupOpen = (group: string) => openGroups.includes(group);
 
+  // Collapsed state - show only toggle button
+  if (collapsed) {
+    return (
+      <aside className="w-12 h-[calc(100vh-64px)] sticky top-16 border-r border-border bg-background flex flex-col items-center py-4">
+        <button
+          onClick={onToggleCollapse}
+          className="w-8 h-8 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+          aria-label="Expand sidebar"
+        >
+          <PanelLeft size={16} />
+        </button>
+      </aside>
+    );
+  }
+
   return (
     <aside className="w-[220px] h-[calc(100vh-64px)] sticky top-16 overflow-y-auto border-r border-border bg-background py-6 px-4">
+      {/* Collapse button */}
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={onToggleCollapse}
+          className="w-8 h-8 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+          aria-label="Collapse sidebar"
+        >
+          <PanelLeftClose size={16} />
+        </button>
+      </div>
+
       {/* Main Navigation */}
       <nav className="space-y-1">
         {navGroups.map((group) => {

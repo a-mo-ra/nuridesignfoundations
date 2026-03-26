@@ -116,6 +116,8 @@ const IndexContent = () => {
             showDocumentation={showDocumentation}
             onGuidelinesClick={handleGuidelinesClick}
             onDocumentationClick={handleDocumentationClick}
+            collapsed={sidebarCollapsed}
+            onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
           />
         )}
 
