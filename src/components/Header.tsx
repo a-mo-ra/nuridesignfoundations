@@ -52,6 +52,7 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
   const { language, setLanguage, t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
@@ -74,6 +75,8 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setIsSearchFocused(false);
+        setIsSearchOpen(false);
+        setSearchQuery('');
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -136,29 +139,38 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
             <div className="flex items-center gap-2">
               {/* Search icon with expandable input */}
               <div ref={searchRef} className="relative hidden md:block">
-                <div className="flex items-center gap-2 bg-muted rounded-lg px-3 py-2 text-sm text-muted-foreground w-48 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
-                  <Search size={16} />
-                  <input
-                    type="text"
-                    placeholder={t('header.search')}
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onFocus={() => setIsSearchFocused(true)}
-                    className="bg-transparent outline-none flex-1 placeholder:text-muted-foreground text-foreground"
-                  />
-                  {searchQuery && (
-                    <button onClick={clearSearch} className="hover:text-foreground">
+                {!isSearchOpen ? (
+                  <button
+                    onClick={() => setIsSearchOpen(true)}
+                    className="w-9 h-9 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                    aria-label="Search"
+                  >
+                    <Search size={18} />
+                  </button>
+                ) : (
+                  <div className="flex items-center gap-2 bg-muted rounded-lg px-3 py-2 text-sm text-muted-foreground w-56 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 animate-fade-in">
+                    <Search size={16} />
+                    <input
+                      type="text"
+                      placeholder={t('header.search')}
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onFocus={() => setIsSearchFocused(true)}
+                      autoFocus
+                      className="bg-transparent outline-none flex-1 placeholder:text-muted-foreground text-foreground"
+                    />
+                    <button onClick={() => { setIsSearchOpen(false); clearSearch(); }} className="hover:text-foreground">
                       <X size={14} />
                     </button>
-                  )}
-                </div>
+                  </div>
+                )}
                 
-                {isSearchFocused && filteredResults.length > 0 && (
+                {isSearchOpen && isSearchFocused && filteredResults.length > 0 && (
                   <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-lg shadow-elevation-3 overflow-hidden z-50">
                     {filteredResults.map((result) => (
                       <button
                         key={result.id}
-                        onClick={() => handleResultClick(result.id)}
+                        onClick={() => { handleResultClick(result.id); setIsSearchOpen(false); }}
                         className="w-full text-left px-4 py-3 hover:bg-primary/10 transition-colors flex items-center justify-between"
                       >
                         <span className="font-medium text-foreground">
@@ -170,7 +182,7 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
                   </div>
                 )}
 
-                {isSearchFocused && searchQuery && filteredResults.length === 0 && (
+                {isSearchOpen && isSearchFocused && searchQuery && filteredResults.length === 0 && (
                   <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-lg shadow-elevation-3 p-4 z-50">
                     <p className="text-sm text-muted-foreground text-center">{t('header.noResults')}</p>
                   </div>
