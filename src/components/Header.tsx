@@ -52,6 +52,7 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
   const { language, setLanguage, t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
