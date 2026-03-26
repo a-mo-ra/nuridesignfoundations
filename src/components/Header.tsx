@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Moon, Sun, Search, X, Globe, Menu } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import nuriLogoBlack from '@/assets/nuri-logo-black.png';
-import nuriLogoPurple from '@/assets/nuri-logo-purple.png';
+import nuriLogoLight from '@/assets/logo-light.png';
+import nuriLogoDark from '@/assets/logo-dark.png';
 
 interface HeaderProps {
   onGuidelinesClick: () => void;
