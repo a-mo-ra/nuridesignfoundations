@@ -210,7 +210,7 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
       </header>
 
       {/* Mobile menu overlay */}
-      {isHome && mobileMenuOpen && (
+      {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-sm pt-16 lg:hidden">
           <nav className="flex flex-col items-center gap-2 p-8">
             {navLinks.map((link) => (
