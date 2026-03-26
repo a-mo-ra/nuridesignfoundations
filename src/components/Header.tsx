@@ -118,21 +118,19 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
               <span className="text-base font-semibold text-foreground tracking-tight hidden sm:inline">Nuri Design Foundations</span>
             </button>
 
-            {/* Center Nav Links - visible on home or always */}
-            {isHome && (
-              <nav className="hidden lg:flex items-center gap-1">
-                {navLinks.map((link) => (
-                  <button
-                    key={link.labelKey}
-                    onClick={() => handleNavClick(link.firstSection)}
-                    className="relative px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
-                  >
-                    {t(link.labelKey)}
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-4/5 h-0.5 bg-primary transition-all duration-300" />
-                  </button>
-                ))}
-              </nav>
-            )}
+            {/* Center Nav Links - always visible */}
+            <nav className="hidden lg:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <button
+                  key={link.labelKey}
+                  onClick={() => handleNavClick(link.firstSection)}
+                  className="relative px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                >
+                  {t(link.labelKey)}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-4/5 h-0.5 bg-primary transition-all duration-300" />
+                </button>
+              ))}
+            </nav>
 
             {/* Right Actions */}
             <div className="flex items-center gap-2">
