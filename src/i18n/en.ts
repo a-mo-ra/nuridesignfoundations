@@ -69,13 +69,13 @@ export const enTranslations: Record<string, string> = {
   // Home - Story
   'home.story.badge': 'The story behind',
   'home.story.title': 'From a personal need to shared learning',
-  'home.story.p1': 'Nuri was born from my journey as a digital product designer. While studying and working with Design Systems, I realized there was a lack of a practical, interactive and free resource that brought together everything I needed to learn in one place.',
-  'home.story.p2': 'With the help of AI tools like Lovable, I transformed that need into a living platform — a space where anyone can explore tokens, components, patterns and best practices in a hands-on way.',
-  'home.story.p3': 'More than a design system, Nuri is a strategic product: a shared learning tool that constantly evolves with new references, examples and guidelines.',
-  'home.story.quote': '"Nuri" means "world" in Korean — and that\'s exactly the idea: to create a universe of knowledge accessible to everyone.',
+  'home.story.p1': 'Nuri was born from the search for a more intuitive way to learn about Design Systems. Dense theoretical content with technical jargon that was more discouraging than helpful led me to create my own study space — with accessible and straightforward language.',
+  'home.story.p2': 'Over time, I realized that my doubts about documentation, handoff, and structuring were the same as many others. That\'s when the project changed direction: I moved from "for me to learn" to "for us to learn together."',
+  'home.story.p3': 'Using Lovable to integrate prototyping with AI, Nuri evolved into a dynamic platform covering everything from color and accessibility best practices to UX success metrics — showing that a Design System is not just a component library, but a strategic product in constant evolution.',
+  'home.story.quote': '"Nuri" means "world" in Korean. Coincidentally, it\'s also the name of the first rocket 100% developed by South Korea. Nuri is our little "design world" and the rocket that drives learning.',
   'home.story.name': 'Brenda Moreno (Bê)',
   'home.story.role': 'UX, UI & Product Designer',
-  'home.story.bio': 'Digital product designer for 2 years, driven by curiosity, creativity and the drive to transform. Creator of Nuri Design Foundations — a free and interactive platform for practical and collaborative study about Design Systems.',
+  'home.story.bio': 'Product Designer focused on accessibility, design systems and user-centered experiences. Passionate about making design learning more accessible and collaborative.',
 
   // Home - CTA
   'home.cta.title': 'Let\'s evolve together?',

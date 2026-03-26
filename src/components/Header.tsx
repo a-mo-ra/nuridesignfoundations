@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Moon, Sun, Search, X, Globe, Menu } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import nuriLogoBlack from '@/assets/nuri-logo-black.png';
-import nuriLogoPurple from '@/assets/nuri-logo-purple.png';
+import nuriLogoLight from '@/assets/logo-light.png';
+import nuriLogoDark from '@/assets/logo-dark.png';
 
 interface HeaderProps {
   onGuidelinesClick: () => void;
@@ -111,28 +111,26 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
               className="flex items-center gap-1.5 hover:opacity-80 transition-opacity shrink-0"
             >
               <img 
-                src={darkMode ? nuriLogoPurple : nuriLogoBlack} 
+                src={darkMode ? nuriLogoDark : nuriLogoLight} 
                 alt="Nuri Design Foundations" 
                 className="w-8 h-8 object-contain" 
               />
               <span className="text-base font-semibold text-foreground tracking-tight hidden sm:inline">Nuri Design Foundations</span>
             </button>
 
-            {/* Center Nav Links - visible on home or always */}
-            {isHome && (
-              <nav className="hidden lg:flex items-center gap-1">
-                {navLinks.map((link) => (
-                  <button
-                    key={link.labelKey}
-                    onClick={() => handleNavClick(link.firstSection)}
-                    className="relative px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
-                  >
-                    {t(link.labelKey)}
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-4/5 h-0.5 bg-primary transition-all duration-300" />
-                  </button>
-                ))}
-              </nav>
-            )}
+            {/* Center Nav Links - always visible */}
+            <nav className="hidden lg:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <button
+                  key={link.labelKey}
+                  onClick={() => handleNavClick(link.firstSection)}
+                  className="relative px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                >
+                  {t(link.labelKey)}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-4/5 h-0.5 bg-primary transition-all duration-300" />
+                </button>
+              ))}
+            </nav>
 
             {/* Right Actions */}
             <div className="flex items-center gap-2">
@@ -199,22 +197,20 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
               </button>
 
               {/* Mobile menu button */}
-              {isHome && (
-                <button
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="lg:hidden w-9 h-9 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
-                  aria-label="Menu"
-                >
-                  <Menu size={18} />
-                </button>
-              )}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden w-9 h-9 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                aria-label="Menu"
+              >
+                <Menu size={18} />
+              </button>
             </div>
           </div>
         </div>
       </header>
 
       {/* Mobile menu overlay */}
-      {isHome && mobileMenuOpen && (
+      {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-sm pt-16 lg:hidden">
           <nav className="flex flex-col items-center gap-2 p-8">
             {navLinks.map((link) => (

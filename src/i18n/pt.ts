@@ -69,13 +69,13 @@ export const ptTranslations: Record<string, string> = {
   // Home - Story
   'home.story.badge': 'A história por trás',
   'home.story.title': 'De uma necessidade pessoal a um aprendizado compartilhado',
-  'home.story.p1': 'O Nuri nasceu da minha jornada como designer de produtos digitais. Enquanto estudava e trabalhava com Design Systems, percebi que faltava um recurso prático, interativo e gratuito que reunisse tudo o que eu precisava aprender em um só lugar.',
-  'home.story.p2': 'Com a ajuda de ferramentas de IA como o Lovable, transformei essa necessidade em uma plataforma viva — um espaço onde qualquer pessoa pode explorar tokens, componentes, padrões e boas práticas de forma hands-on.',
-  'home.story.p3': 'Mais do que um design system, o Nuri é um produto estratégico: uma ferramenta de aprendizado compartilhado que evolui constantemente com novas referências, exemplos e guidelines.',
-  'home.story.quote': '"Nuri" significa "mundo" em coreano — e a ideia é justamente essa: criar um universo de conhecimento acessível para todos.',
+  'home.story.p1': 'O Nuri nasceu da busca por uma forma mais intuitiva de aprender sobre Design Systems. Conteúdos teóricos densos, com termos técnicos que mais desmotivavam do que ajudavam, me levaram a criar meu próprio espaço de estudo — com linguagem acessível e direta.',
+  'home.story.p2': 'Com o tempo, percebi que minhas dúvidas sobre documentação, handoff e estruturação eram as mesmas de muita gente. Foi aí que o projeto mudou de direção: deixei o "para eu aprender" e assumi o "para nós aprendermos".',
+  'home.story.p3': 'Utilizando a Lovable para integrar prototipação com IA, o Nuri evoluiu para uma plataforma dinâmica que abrange desde boas práticas de cores e acessibilidade até métricas de sucesso em UX — demonstrando que um Design System não é apenas uma biblioteca de componentes, mas um produto estratégico em constante evolução.',
+  'home.story.quote': '"Nuri" significa "mundo" em coreano. Curiosamente, também é o nome do primeiro foguete 100% desenvolvido pela Coreia do Sul. O Nuri é o nosso "mini mundo" de design e o foguete que impulsiona o aprendizado.',
   'home.story.name': 'Brenda Moreno (Bê)',
   'home.story.role': 'UX, UI & Product Designer',
-  'home.story.bio': 'Designer de produtos digitais há 2 anos, movida pela curiosidade, pela criatividade e pelo impulso de transformar. Criadora do Nuri Design Foundations — uma plataforma gratuita e interativa de estudo prático e colaborativo sobre Design Systems.',
+  'home.story.bio': 'Designer de Produto com foco em acessibilidade, design systems e experiências centradas no usuário. Apaixonada por tornar o aprendizado de design mais acessível e colaborativo.',
 
   // Home - CTA
   'home.cta.title': 'Vamos evoluir juntos?',

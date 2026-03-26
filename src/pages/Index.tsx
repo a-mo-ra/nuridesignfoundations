@@ -29,6 +29,7 @@ const IndexContent = () => {
   const [showGuidelines, setShowGuidelines] = useState(false);
   const [showDocumentation, setShowDocumentation] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const isHome = activeSection === 'home' && !showGuidelines && !showDocumentation;
 
@@ -115,6 +116,8 @@ const IndexContent = () => {
             showDocumentation={showDocumentation}
             onGuidelinesClick={handleGuidelinesClick}
             onDocumentationClick={handleDocumentationClick}
+            collapsed={sidebarCollapsed}
+            onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
           />
         )}
 
