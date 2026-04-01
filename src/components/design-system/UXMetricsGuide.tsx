@@ -1,11 +1,13 @@
 import React from 'react';
 import { BarChart3, Users, Target, TrendingUp, Clock, ExternalLink, AlertTriangle, CheckCircle, Info, ArrowLeft } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface UXMetricsGuideProps {
   onBack: () => void;
 }
 
 const UXMetricsGuide = ({ onBack }: UXMetricsGuideProps) => {
+  const { l } = useLanguage();
   const taskMetrics = [
     {
       name: 'Taxa de Conclusão de Tarefas',
