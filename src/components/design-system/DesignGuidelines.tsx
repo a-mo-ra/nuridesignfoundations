@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { BookOpen, Users, Target, Lightbulb, CheckCircle, AlertTriangle, Zap, Eye, Heart, ExternalLink, Shield, Code, Layers } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface DesignGuidelinesProps {
   onNavigate?: (section: string) => void;
