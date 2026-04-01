@@ -8,6 +8,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  l: (pt: string, en: string) => string;
 }
 
 const translations: Record<Language, Record<string, string>> = {
