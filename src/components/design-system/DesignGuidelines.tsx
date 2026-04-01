@@ -8,6 +8,7 @@ interface DesignGuidelinesProps {
 }
 
 const DesignGuidelines = ({ onNavigate }: DesignGuidelinesProps = {}) => {
+  const { l } = useLanguage();
   const [expandedSection, setExpandedSection] = useState<string | null>('why-design-system');
 
   const toggleSection = (sectionId: string) => {
