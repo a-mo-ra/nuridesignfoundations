@@ -1,11 +1,13 @@
 import React from 'react';
 import { BarChart3, Users, Target, TrendingUp, Clock, ExternalLink, AlertTriangle, CheckCircle, Info, ArrowLeft } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface UXMetricsGuideProps {
   onBack: () => void;
 }
 
 const UXMetricsGuide = ({ onBack }: UXMetricsGuideProps) => {
+  const { l } = useLanguage();
   const taskMetrics = [
     {
       name: 'Taxa de Conclusão de Tarefas',
@@ -227,15 +229,15 @@ const UXMetricsGuide = ({ onBack }: UXMetricsGuideProps) => {
           className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
         >
           <ArrowLeft size={16} />
-          Voltar para Diretrizes
+          {l('Voltar para Diretrizes', 'Back to Guidelines')}
         </button>
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">
-            Guia Completo de Métricas UX
+            {l('Guia Completo de Métricas UX', 'Complete UX Metrics Guide')}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Todas as métricas essenciais para medir a qualidade da experiência do usuário e o impacto no negócio. 
-            Inclui métricas de tarefa, engajamento, satisfação e negócio.
+            {l('Todas as métricas essenciais para medir a qualidade da experiência do usuário e o impacto no negócio. Inclui métricas de tarefa, engajamento, satisfação e negócio.',
+               'All essential metrics for measuring user experience quality and business impact. Includes task, engagement, satisfaction and business metrics.')}
           </p>
         </div>
       </div>

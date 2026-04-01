@@ -1,12 +1,14 @@
 
 import React, { useState } from 'react';
 import { BookOpen, Users, Target, Lightbulb, CheckCircle, AlertTriangle, Zap, Eye, Heart, ExternalLink, Shield, Code, Layers } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface DesignGuidelinesProps {
   onNavigate?: (section: string) => void;
 }
 
 const DesignGuidelines = ({ onNavigate }: DesignGuidelinesProps = {}) => {
+  const { l } = useLanguage();
   const [expandedSection, setExpandedSection] = useState<string | null>('why-design-system');
 
   const toggleSection = (sectionId: string) => {
@@ -70,8 +72,8 @@ const DesignGuidelines = ({ onNavigate }: DesignGuidelinesProps = {}) => {
     <div className="space-y-8">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Diretrizes Nuri</h1>
-        <p className="text-lg text-muted-foreground">Princípios fundamentais e melhores práticas para experiência do usuário</p>
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">{l('Diretrizes Nuri', 'Nuri Guidelines')}</h1>
+        <p className="text-lg text-muted-foreground">{l('Princípios fundamentais e melhores práticas para experiência do usuário', 'Fundamental principles and best practices for user experience')}</p>
       </div>
 
       {/* Por que um Sistema de Design? */}
