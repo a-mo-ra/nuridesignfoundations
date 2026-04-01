@@ -75,7 +75,7 @@ export const enTranslations: Record<string, string> = {
   'home.story.quote': '"Nuri" means "world" in Korean. Coincidentally, it\'s also the name of the first rocket 100% developed by South Korea. Nuri is our little "design world" and the rocket that drives learning.',
   'home.story.name': 'Brenda Moreno (Bê)',
   'home.story.role': 'UX, UI & Product Designer',
-  'home.story.bio': 'Product Designer focused on accessibility, design systems and user-centered experiences. Passionate about making design learning more accessible and collaborative.',
+  'home.story.bio': 'Digital product designer for 2 years, driven by curiosity, creativity and the urge to transform.',
 
   // Home - CTA
   'home.cta.title': 'Let\'s evolve together?',

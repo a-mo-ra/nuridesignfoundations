@@ -75,7 +75,7 @@ export const ptTranslations: Record<string, string> = {
   'home.story.quote': '"Nuri" significa "mundo" em coreano. Curiosamente, também é o nome do primeiro foguete 100% desenvolvido pela Coreia do Sul. O Nuri é o nosso "mini mundo" de design e o foguete que impulsiona o aprendizado.',
   'home.story.name': 'Brenda Moreno (Bê)',
   'home.story.role': 'UX, UI & Product Designer',
-  'home.story.bio': 'Designer de Produto com foco em acessibilidade, design systems e experiências centradas no usuário. Apaixonada por tornar o aprendizado de design mais acessível e colaborativo.',
+  'home.story.bio': 'Designer de produtos digitais há 2 anos, movida pela curiosidade, criatividade e o impulso de transformar.',
 
   // Home - CTA
   'home.cta.title': 'Vamos evoluir juntos?',
