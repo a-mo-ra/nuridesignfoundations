@@ -159,9 +159,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             <span>{t('home.version')}</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight mb-6">
-            {t('home.title1')}<br />{t('home.title2')}
-          </h1>
+          <HeroTitle title1={t('home.title1')} title2={t('home.title2')} />
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             {t('home.subtitle')}
