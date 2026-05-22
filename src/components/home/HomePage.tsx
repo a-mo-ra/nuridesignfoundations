@@ -30,45 +30,47 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
   );
 };
 
-/* ──────────────── Typewriter Hook ──────────────── */
-const useTypewriter = (text: string, speed = 60, startDelay = 200) => {
-  const [displayed, setDisplayed] = useState('');
-  useEffect(() => {
-    setDisplayed('');
-    let i = 0;
-    const start = setTimeout(() => {
-      const interval = setInterval(() => {
-        i++;
-        setDisplayed(text.slice(0, i));
-        if (i >= text.length) clearInterval(interval);
-      }, speed);
-    }, startDelay);
-    return () => clearTimeout(start);
-  }, [text, speed, startDelay]);
-  return displayed;
-};
 
-/* ──────────────── Hero Title with Typewriter ──────────────── */
-const HeroTitle = ({ title1, title2 }: { title1: string; title2: string }) => {
-  const full = `${title1}\n${title2}`;
-  const typed = useTypewriter(full, 55, 250);
-  const isDone = typed.length >= full.length;
-  const lines = typed.split('\n');
+/* ──────────────── Looping Typewriter Hero Title ──────────────── */
+const HeroTitle = () => {
+  const words = ['Aprenda', 'Construa', 'Evolua'];
+  const [index, setIndex] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [phase, setPhase] = useState<'typing' | 'pausing' | 'deleting'>('typing');
+
+  useEffect(() => {
+    const current = words[index];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === 'typing') {
+      if (displayed.length < current.length) {
+        timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 110);
+      } else {
+        timeout = setTimeout(() => setPhase('deleting'), 1400);
+      }
+    } else if (phase === 'deleting') {
+      if (displayed.length > 0) {
+        timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 60);
+      } else {
+        setIndex((i) => (i + 1) % words.length);
+        setPhase('typing');
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [displayed, phase, index]);
+
   return (
-    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight mb-6 min-h-[1.2em]">
-      {lines.map((line, i) => (
-        <React.Fragment key={i}>
-          {line}
-          {i < lines.length - 1 && <br />}
-        </React.Fragment>
-      ))}
+    <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tight mb-6 min-h-[1.2em]">
+      <span>{displayed}</span>
       <span
-        className={`inline-block w-[3px] md:w-[4px] h-[0.9em] -mb-[0.1em] ml-1 bg-primary align-middle ${isDone ? 'animate-pulse' : ''}`}
+        className="inline-block w-[4px] md:w-[5px] h-[0.85em] ml-2 bg-primary align-middle animate-pulse"
         aria-hidden="true"
       />
     </h1>
   );
 };
+
+
 
 /* ──────────────── Card Info for "What you'll find" ──────────────── */
 interface CardInfo {
@@ -181,7 +183,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             <span>{t('home.version')}</span>
           </div>
 
-          <HeroTitle title1={t('home.title1')} title2={t('home.title2')} />
+          <HeroTitle />
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             {t('home.subtitle')}
