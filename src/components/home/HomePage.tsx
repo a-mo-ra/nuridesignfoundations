@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   Palette, Type, Layers, Smile, Grid3X3, LayoutGrid, Navigation, FormInput, 
   Atom, Tag, Figma, Plug, Code, Sparkles, ArrowRight, Rocket, Globe2,
@@ -27,6 +27,46 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
     >
       {children}
     </motion.div>
+  );
+};
+
+/* ──────────────── Typewriter Hook ──────────────── */
+const useTypewriter = (text: string, speed = 60, startDelay = 200) => {
+  const [displayed, setDisplayed] = useState('');
+  useEffect(() => {
+    setDisplayed('');
+    let i = 0;
+    const start = setTimeout(() => {
+      const interval = setInterval(() => {
+        i++;
+        setDisplayed(text.slice(0, i));
+        if (i >= text.length) clearInterval(interval);
+      }, speed);
+    }, startDelay);
+    return () => clearTimeout(start);
+  }, [text, speed, startDelay]);
+  return displayed;
+};
+
+/* ──────────────── Hero Title with Typewriter ──────────────── */
+const HeroTitle = ({ title1, title2 }: { title1: string; title2: string }) => {
+  const full = `${title1}\n${title2}`;
+  const typed = useTypewriter(full, 55, 250);
+  const isDone = typed.length >= full.length;
+  const lines = typed.split('\n');
+  return (
+    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight mb-6 min-h-[1.2em]">
+      {lines.map((line, i) => (
+        <React.Fragment key={i}>
+          {line}
+          {i < lines.length - 1 && <br />}
+        </React.Fragment>
+      ))}
+      <span
+        className={`inline-block w-[3px] md:w-[4px] h-[0.9em] -mb-[0.1em] ml-1 bg-primary align-middle ${isDone ? 'animate-pulse' : ''}`}
+        aria-hidden="true"
+      />
+    </h1>
   );
 };
 
@@ -141,9 +181,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             <span>{t('home.version')}</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight mb-6">
-            {t('home.title1')}<br />{t('home.title2')}
-          </h1>
+          <HeroTitle title1={t('home.title1')} title2={t('home.title2')} />
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             {t('home.subtitle')}
