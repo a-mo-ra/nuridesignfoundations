@@ -48,6 +48,28 @@ const useTypewriter = (text: string, speed = 60, startDelay = 200) => {
   return displayed;
 };
 
+/* ──────────────── Hero Title with Typewriter ──────────────── */
+const HeroTitle = ({ title1, title2 }: { title1: string; title2: string }) => {
+  const full = `${title1}\n${title2}`;
+  const typed = useTypewriter(full, 55, 250);
+  const isDone = typed.length >= full.length;
+  const lines = typed.split('\n');
+  return (
+    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight mb-6 min-h-[1.2em]">
+      {lines.map((line, i) => (
+        <React.Fragment key={i}>
+          {line}
+          {i < lines.length - 1 && <br />}
+        </React.Fragment>
+      ))}
+      <span
+        className={`inline-block w-[3px] md:w-[4px] h-[0.9em] -mb-[0.1em] ml-1 bg-primary align-middle ${isDone ? 'animate-pulse' : ''}`}
+        aria-hidden="true"
+      />
+    </h1>
+  );
+};
+
 /* ──────────────── Card Info for "What you'll find" ──────────────── */
 interface CardInfo {
   id: string;
