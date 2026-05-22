@@ -30,23 +30,6 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
   );
 };
 
-/* ──────────────── Typewriter Hook ──────────────── */
-const useTypewriter = (text: string, speed = 60, startDelay = 200) => {
-  const [displayed, setDisplayed] = useState('');
-  useEffect(() => {
-    setDisplayed('');
-    let i = 0;
-    const start = setTimeout(() => {
-      const interval = setInterval(() => {
-        i++;
-        setDisplayed(text.slice(0, i));
-        if (i >= text.length) clearInterval(interval);
-      }, speed);
-    }, startDelay);
-    return () => clearTimeout(start);
-  }, [text, speed, startDelay]);
-  return displayed;
-};
 
 /* ──────────────── Looping Typewriter Hero Title ──────────────── */
 const HeroTitle = () => {
