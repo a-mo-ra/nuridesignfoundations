@@ -3,30 +3,32 @@ import React, { useState } from 'react';
 import DigitalChecklist from '@/components/shared/DigitalChecklist';
 import { Book, Copy, Check } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const GridSystem = () => {
+  const { l } = useLanguage();
   const [copiedGrid, setCopiedGrid] = useState<string | null>(null);
 
   const gridSystems = [
     {
       name: 'Auto Fit 250px',
       class: 'grid-auto-fit-250',
-      description: 'Grid responsivo com colunas mínimas de 250px',
-      usage: 'Cards de produtos, galeria de imagens',
+      description: l('Grid responsivo com colunas mínimas de 250px', 'Responsive grid with minimum 250px columns'),
+      usage: l('Cards de produtos, galeria de imagens', 'Product cards, image galleries'),
       code: 'grid grid-cols-auto-fit-250 gap-6'
     },
     {
       name: 'Auto Fit 300px',
       class: 'grid-auto-fit-300',
-      description: 'Grid responsivo com colunas mínimas de 300px',
-      usage: 'Cards de conteúdo, portfolios',
+      description: l('Grid responsivo com colunas mínimas de 300px', 'Responsive grid with minimum 300px columns'),
+      usage: l('Cards de conteúdo, portfolios', 'Content cards, portfolios'),
       code: 'grid grid-cols-auto-fit-300 gap-6'
     },
     {
       name: 'Auto Fill 200px',
       class: 'grid-auto-fill-200',
-      description: 'Grid que preenche com colunas de 200px',
-      usage: 'Thumbnails, ícones, elementos pequenos',
+      description: l('Grid que preenche com colunas de 200px', 'Grid that fills with 200px columns'),
+      usage: l('Thumbnails, ícones, elementos pequenos', 'Thumbnails, icons, small elements'),
       code: 'grid grid-cols-auto-fill-200 gap-4'
     }
   ];
@@ -35,29 +37,29 @@ const GridSystem = () => {
     {
       name: '12 Column Grid',
       class: 'grid grid-cols-12 gap-6',
-      description: 'Sistema clássico de 12 colunas',
-      usage: 'Layouts complexos, dashboard'
+      description: l('Sistema clássico de 12 colunas', 'Classic 12-column system'),
+      usage: l('Layouts complexos, dashboard', 'Complex layouts, dashboards')
     },
     {
       name: 'Responsive Cards',
       class: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6',
-      description: '1 coluna mobile, 2 tablet, 3 desktop',
-      usage: 'Cards de conteúdo, artigos'
+      description: l('1 coluna mobile, 2 tablet, 3 desktop', '1 column mobile, 2 tablet, 3 desktop'),
+      usage: l('Cards de conteúdo, artigos', 'Content cards, articles')
     },
     {
       name: 'Sidebar Layout',
       class: 'grid grid-cols-1 lg:grid-cols-4 gap-6',
-      description: 'Layout com sidebar em desktop',
-      usage: 'Páginas de conteúdo com navegação lateral'
+      description: l('Layout com sidebar em desktop', 'Layout with sidebar on desktop'),
+      usage: l('Páginas de conteúdo com navegação lateral', 'Content pages with side navigation')
     }
   ];
 
   const spacingSystem = [
-    { name: 'Extra Small', class: 'gap-2', value: '8px', usage: 'Elementos muito próximos' },
-    { name: 'Small', class: 'gap-4', value: '16px', usage: 'Elementos relacionados' },
-    { name: 'Medium', class: 'gap-6', value: '24px', usage: 'Espaçamento padrão' },
-    { name: 'Large', class: 'gap-8', value: '32px', usage: 'Seções distintas' },
-    { name: 'Extra Large', class: 'gap-12', value: '48px', usage: 'Separação de blocos' }
+    { name: 'Extra Small', class: 'gap-2', value: '8px', usage: l('Elementos muito próximos', 'Very close elements') },
+    { name: 'Small', class: 'gap-4', value: '16px', usage: l('Elementos relacionados', 'Related elements') },
+    { name: 'Medium', class: 'gap-6', value: '24px', usage: l('Espaçamento padrão', 'Default spacing') },
+    { name: 'Large', class: 'gap-8', value: '32px', usage: l('Seções distintas', 'Distinct sections') },
+    { name: 'Extra Large', class: 'gap-12', value: '48px', usage: l('Separação de blocos', 'Block separation') }
   ];
 
   const copyToClipboard = async (code: string, name: string) => {
@@ -65,14 +67,14 @@ const GridSystem = () => {
       await navigator.clipboard.writeText(code);
       setCopiedGrid(name);
       toast({
-        title: "Copiado!",
-        description: `Código do ${name} copiado para a área de transferência.`,
+        title: l('Copiado!', 'Copied!'),
+        description: l(`Código do ${name} copiado para a área de transferência.`, `Code for ${name} copied to clipboard.`),
       });
       setTimeout(() => setCopiedGrid(null), 2000);
     } catch (err) {
       toast({
-        title: "Erro",
-        description: "Não foi possível copiar o código.",
+        title: l('Erro', 'Error'),
+        description: l('Não foi possível copiar o código.', 'Could not copy the code.'),
         variant: "destructive"
       });
     }
@@ -95,12 +97,12 @@ const GridSystem = () => {
     <div className="space-y-8">
       <div className="mb-6">
         <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Grid System</h1>
-        <p className="text-lg text-muted-foreground">Layouts responsivos e sistemas de espaçamento</p>
+        <p className="text-lg text-muted-foreground">{l('Layouts responsivos e sistemas de espaçamento', 'Responsive layouts and spacing systems')}</p>
       </div>
 
       {/* Auto Grid Systems */}
       <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-neutral-200 dark:border-neutral-800">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">Grids Automáticos</h3>
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">{l('Grids Automáticos', 'Automatic Grids')}</h3>
         
         <div className="space-y-8">
           {gridSystems.map((grid) => (
@@ -120,7 +122,7 @@ const GridSystem = () => {
                   ) : (
                     <Copy size={14} />
                   )}
-                  Copiar
+                  {l('Copiar', 'Copy')}
                 </button>
               </div>
               
@@ -136,7 +138,7 @@ const GridSystem = () => {
 
       {/* Responsive Grids */}
       <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-neutral-200 dark:border-neutral-800">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">Grids Responsivos</h3>
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">{l('Grids Responsivos', 'Responsive Grids')}</h3>
         
         <div className="space-y-8">
           {responsiveGrids.map((grid) => (
@@ -156,7 +158,7 @@ const GridSystem = () => {
                   ) : (
                     <Copy size={14} />
                   )}
-                  Copiar
+                  {l('Copiar', 'Copy')}
                 </button>
               </div>
               
@@ -172,7 +174,7 @@ const GridSystem = () => {
 
       {/* Spacing System */}
       <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-neutral-200 dark:border-neutral-800">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">Sistema de Espaçamento</h3>
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">{l('Sistema de Espaçamento', 'Spacing System')}</h3>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {spacingSystem.map((spacing) => (
@@ -199,11 +201,11 @@ const GridSystem = () => {
 
       {/* Breakpoints Reference */}
       <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-neutral-200 dark:border-neutral-800">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">Breakpoints de Referência</h3>
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">{l('Breakpoints de Referência', 'Reference Breakpoints')}</h3>
         
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-3">
-            <h4 className="font-medium text-neutral-800 dark:text-white">Breakpoints Tailwind</h4>
+            <h4 className="font-medium text-neutral-800 dark:text-white">{l('Breakpoints Tailwind', 'Tailwind Breakpoints')}</h4>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <code className="bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-700 dark:text-neutral-300">sm:</code>
@@ -229,16 +231,16 @@ const GridSystem = () => {
           </div>
           
           <div className="space-y-3">
-            <h4 className="font-medium text-neutral-800 dark:text-white">Uso Recomendado</h4>
+            <h4 className="font-medium text-neutral-800 dark:text-white">{l('Uso Recomendado', 'Recommended Usage')}</h4>
             <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
               <div>
-                <strong>Mobile First:</strong> Comece com mobile e adicione breakpoints maiores
+                <strong>Mobile First:</strong> {l('Comece com mobile e adicione breakpoints maiores', 'Start with mobile and add larger breakpoints')}
               </div>
               <div>
-                <strong>Container:</strong> Use max-width para limitar largura em telas grandes
+                <strong>Container:</strong> {l('Use max-width para limitar largura em telas grandes', 'Use max-width to limit width on large screens')}
               </div>
               <div>
-                <strong>Flexibilidade:</strong> Combine grid com flexbox quando necessário
+                <strong>{l('Flexibilidade', 'Flexibility')}:</strong> {l('Combine grid com flexbox quando necessário', 'Combine grid with flexbox when needed')}
               </div>
             </div>
           </div>
@@ -247,24 +249,24 @@ const GridSystem = () => {
 
       {/* Guidelines */}
       <div className="bg-gradient-to-br from-brand-50 to-white dark:from-neutral-900 dark:to-black rounded-xl p-6 border border-brand-200 dark:border-neutral-800">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">Diretrizes de Grid</h3>
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">{l('Diretrizes de Grid', 'Grid Guidelines')}</h3>
         <div className="grid md:grid-cols-2 gap-6 text-sm">
           <div>
-            <h4 className="font-medium text-neutral-800 dark:text-white mb-3">Boas Práticas</h4>
+            <h4 className="font-medium text-neutral-800 dark:text-white mb-3">{l('Boas Práticas', 'Best Practices')}</h4>
             <ul className="space-y-2 text-neutral-600 dark:text-neutral-300">
-              <li>• Use grids automáticos para conteúdo dinâmico</li>
-              <li>• Mantenha espaçamento consistente</li>
-              <li>• Teste em diferentes tamanhos de tela</li>
-              <li>• Priorize legibilidade e usabilidade</li>
+              <li>• {l('Use grids automáticos para conteúdo dinâmico', 'Use automatic grids for dynamic content')}</li>
+              <li>• {l('Mantenha espaçamento consistente', 'Maintain consistent spacing')}</li>
+              <li>• {l('Teste em diferentes tamanhos de tela', 'Test on different screen sizes')}</li>
+              <li>• {l('Priorize legibilidade e usabilidade', 'Prioritize readability and usability')}</li>
             </ul>
           </div>
           <div>
             <h4 className="font-medium text-neutral-800 dark:text-white mb-3">Performance</h4>
             <ul className="space-y-2 text-neutral-600 dark:text-neutral-300">
-              <li>• Evite grids muito complexos</li>
-              <li>• Use CSS Grid para layouts 2D</li>
-              <li>• Prefira Flexbox para layouts 1D</li>
-              <li>• Otimize para dispositivos móveis</li>
+              <li>• {l('Evite grids muito complexos', 'Avoid overly complex grids')}</li>
+              <li>• {l('Use CSS Grid para layouts 2D', 'Use CSS Grid for 2D layouts')}</li>
+              <li>• {l('Prefira Flexbox para layouts 1D', 'Prefer Flexbox for 1D layouts')}</li>
+              <li>• {l('Otimize para dispositivos móveis', 'Optimize for mobile devices')}</li>
             </ul>
           </div>
         </div>
