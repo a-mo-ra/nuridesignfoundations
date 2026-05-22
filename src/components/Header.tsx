@@ -113,11 +113,6 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
               onClick={onLogoClick}
               className="flex items-center gap-1.5 hover:opacity-80 transition-opacity shrink-0"
             >
-              <img 
-                src={darkMode ? nuriLogoDark : nuriLogoLight} 
-                alt="Nuri Design Foundations" 
-                className="w-8 h-8 object-contain" 
-              />
               <span className="text-base font-semibold text-foreground tracking-tight hidden sm:inline">Nuri Design Foundations</span>
             </button>
 
