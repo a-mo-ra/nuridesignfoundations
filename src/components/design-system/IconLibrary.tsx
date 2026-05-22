@@ -9,79 +9,81 @@ import {
   Shield, Lock, Key, Eye, EyeOff, Flag
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const IconLibrary = () => {
+  const { l } = useLanguage();
   const [copiedIcon, setCopiedIcon] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
 
   const iconCategories = [
     {
-      name: 'Interface',
-      description: 'Ícones para elementos de interface e navegação',
+      name: l('Interface', 'Interface'),
+      description: l('Ícones para elementos de interface e navegação', 'Icons for interface elements and navigation'),
       icons: [
-        { name: 'Home', component: Home, usage: 'Página inicial, navegação' },
-        { name: 'Settings', component: Settings, usage: 'Configurações, opções' },
-        { name: 'Search', component: Search, usage: 'Pesquisa, busca' },
-        { name: 'Bell', component: Bell, usage: 'Notificações, alertas' },
-        { name: 'User', component: User, usage: 'Perfil, conta de usuário' },
-        { name: 'Edit', component: Edit, usage: 'Editar, modificar' },
-        { name: 'Trash', component: Trash, usage: 'Excluir, remover' },
-        { name: 'Download', component: Download, usage: 'Baixar arquivo' },
-        { name: 'Upload', component: Upload, usage: 'Enviar arquivo' }
+        { name: 'Home', component: Home, usage: l('Página inicial, navegação', 'Home page, navigation') },
+        { name: 'Settings', component: Settings, usage: l('Configurações, opções', 'Settings, options') },
+        { name: 'Search', component: Search, usage: l('Pesquisa, busca', 'Search') },
+        { name: 'Bell', component: Bell, usage: l('Notificações, alertas', 'Notifications, alerts') },
+        { name: 'User', component: User, usage: l('Perfil, conta de usuário', 'Profile, user account') },
+        { name: 'Edit', component: Edit, usage: l('Editar, modificar', 'Edit, modify') },
+        { name: 'Trash', component: Trash, usage: l('Excluir, remover', 'Delete, remove') },
+        { name: 'Download', component: Download, usage: l('Baixar arquivo', 'Download file') },
+        { name: 'Upload', component: Upload, usage: l('Enviar arquivo', 'Upload file') }
       ]
     },
     {
-      name: 'Comunicação',
-      description: 'Ícones para contato e comunicação',
+      name: l('Comunicação', 'Communication'),
+      description: l('Ícones para contato e comunicação', 'Icons for contact and communication'),
       icons: [
-        { name: 'Mail', component: Mail, usage: 'Email, mensagem' },
-        { name: 'Calendar', component: Calendar, usage: 'Agenda, eventos' },
-        { name: 'Clock', component: Clock, usage: 'Tempo, horário' },
-        { name: 'Flag', component: Flag, usage: 'Marcador, destaque' }
+        { name: 'Mail', component: Mail, usage: l('Email, mensagem', 'Email, message') },
+        { name: 'Calendar', component: Calendar, usage: l('Agenda, eventos', 'Calendar, events') },
+        { name: 'Clock', component: Clock, usage: l('Tempo, horário', 'Time, schedule') },
+        { name: 'Flag', component: Flag, usage: l('Marcador, destaque', 'Marker, highlight') }
       ]
     },
     {
-      name: 'Mídia',
-      description: 'Ícones para conteúdo multimídia',
+      name: l('Mídia', 'Media'),
+      description: l('Ícones para conteúdo multimídia', 'Icons for multimedia content'),
       icons: [
-        { name: 'Play', component: Play, usage: 'Reproduzir mídia' },
-        { name: 'Pause', component: Pause, usage: 'Pausar reprodução' },
-        { name: 'Volume2', component: Volume2, usage: 'Controle de áudio' },
-        { name: 'Camera', component: Camera, usage: 'Câmera, foto' },
-        { name: 'Image', component: Image, usage: 'Imagem, galeria' },
-        { name: 'Video', component: Video, usage: 'Vídeo, filmagem' },
-        { name: 'Music', component: Music, usage: 'Música, áudio' }
+        { name: 'Play', component: Play, usage: l('Reproduzir mídia', 'Play media') },
+        { name: 'Pause', component: Pause, usage: l('Pausar reprodução', 'Pause playback') },
+        { name: 'Volume2', component: Volume2, usage: l('Controle de áudio', 'Audio control') },
+        { name: 'Camera', component: Camera, usage: l('Câmera, foto', 'Camera, photo') },
+        { name: 'Image', component: Image, usage: l('Imagem, galeria', 'Image, gallery') },
+        { name: 'Video', component: Video, usage: l('Vídeo, filmagem', 'Video, footage') },
+        { name: 'Music', component: Music, usage: l('Música, áudio', 'Music, audio') }
       ]
     },
     {
-      name: 'Status & Feedback',
-      description: 'Ícones para estados e feedback do sistema',
+      name: l('Status & Feedback', 'Status & Feedback'),
+      description: l('Ícones para estados e feedback do sistema', 'Icons for system states and feedback'),
       icons: [
-        { name: 'Heart', component: Heart, usage: 'Favorito, curtir' },
-        { name: 'Star', component: Star, usage: 'Avaliação, destaque' },
-        { name: 'Check', component: Check, usage: 'Sucesso, confirmação' },
-        { name: 'Zap', component: Lightning, usage: 'Energia, rapidez' },
-        { name: 'Shield', component: Shield, usage: 'Segurança, proteção' },
-        { name: 'Lock', component: Lock, usage: 'Bloqueado, privado' },
-        { name: 'Key', component: Key, usage: 'Chave, acesso' }
+        { name: 'Heart', component: Heart, usage: l('Favorito, curtir', 'Favorite, like') },
+        { name: 'Star', component: Star, usage: l('Avaliação, destaque', 'Rating, highlight') },
+        { name: 'Check', component: Check, usage: l('Sucesso, confirmação', 'Success, confirmation') },
+        { name: 'Zap', component: Lightning, usage: l('Energia, rapidez', 'Energy, speed') },
+        { name: 'Shield', component: Shield, usage: l('Segurança, proteção', 'Security, protection') },
+        { name: 'Lock', component: Lock, usage: l('Bloqueado, privado', 'Locked, private') },
+        { name: 'Key', component: Key, usage: l('Chave, acesso', 'Key, access') }
       ]
     },
     {
-      name: 'Clima & Natureza',
-      description: 'Ícones relacionados ao clima e natureza',
+      name: l('Clima & Natureza', 'Weather & Nature'),
+      description: l('Ícones relacionados ao clima e natureza', 'Icons related to weather and nature'),
       icons: [
-        { name: 'Sun', component: Sun, usage: 'Sol, dia, modo claro' },
-        { name: 'Moon', component: Moon, usage: 'Lua, noite, modo escuro' },
-        { name: 'Cloud', component: Cloud, usage: 'Nuvem, armazenamento' },
-        { name: 'Umbrella', component: Umbrella, usage: 'Chuva, proteção' }
+        { name: 'Sun', component: Sun, usage: l('Sol, dia, modo claro', 'Sun, day, light mode') },
+        { name: 'Moon', component: Moon, usage: l('Lua, noite, modo escuro', 'Moon, night, dark mode') },
+        { name: 'Cloud', component: Cloud, usage: l('Nuvem, armazenamento', 'Cloud, storage') },
+        { name: 'Umbrella', component: Umbrella, usage: l('Chuva, proteção', 'Rain, protection') }
       ]
     },
     {
-      name: 'Visualização',
-      description: 'Ícones para controle de visualização',
+      name: l('Visualização', 'Visibility'),
+      description: l('Ícones para controle de visualização', 'Icons for visibility control'),
       icons: [
-        { name: 'Eye', component: Eye, usage: 'Mostrar, visualizar' },
-        { name: 'EyeOff', component: EyeOff, usage: 'Ocultar, senha' }
+        { name: 'Eye', component: Eye, usage: l('Mostrar, visualizar', 'Show, view') },
+        { name: 'EyeOff', component: EyeOff, usage: l('Ocultar, senha', 'Hide, password') }
       ]
     }
   ];
@@ -89,20 +91,20 @@ const IconLibrary = () => {
   const copyIconCode = async (iconName: string) => {
     const importCode = `import { ${iconName} } from 'lucide-react';`;
     const usageCode = `<${iconName} size={20} className="text-neutral-600" />`;
-    const fullCode = `${importCode}\n\n// Uso:\n${usageCode}`;
+    const fullCode = `${importCode}\n\n// ${l('Uso', 'Usage')}:\n${usageCode}`;
     
     try {
       await navigator.clipboard.writeText(fullCode);
       setCopiedIcon(iconName);
       toast({
-        title: "Copiado!",
-        description: `Código do ícone ${iconName} copiado para a área de transferência.`,
+        title: l('Copiado!', 'Copied!'),
+        description: l(`Código do ícone ${iconName} copiado para a área de transferência.`, `Code for icon ${iconName} copied to clipboard.`),
       });
       setTimeout(() => setCopiedIcon(null), 2000);
     } catch (err) {
       toast({
-        title: "Erro",
-        description: "Não foi possível copiar o código.",
+        title: l('Erro', 'Error'),
+        description: l('Não foi possível copiar o código.', 'Could not copy the code.'),
         variant: "destructive"
       });
     }
@@ -119,8 +121,8 @@ const IconLibrary = () => {
   return (
     <div className="space-y-8">
       <div className="mb-6">
-        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">Ícones</h1>
-        <p className="text-lg text-muted-foreground">Coleção completa com Lucide React e ícones customizados</p>
+        <h1 className="text-4xl font-bold text-foreground tracking-tight mb-4">{l('Ícones', 'Icons')}</h1>
+        <p className="text-lg text-muted-foreground">{l('Coleção completa com Lucide React e ícones customizados', 'Complete collection with Lucide React and custom icons')}</p>
       </div>
 
       {/* Search */}
@@ -129,7 +131,7 @@ const IconLibrary = () => {
           <Search size={18} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" />
           <input
             type="text"
-            placeholder="Pesquisar ícones..."
+            placeholder={l('Pesquisar ícones...', 'Search icons...')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all duration-200 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white"
@@ -184,14 +186,14 @@ const IconLibrary = () => {
 
       {/* Icon Sizes Demo */}
       <div className="bg-white dark:bg-black rounded-xl p-6 shadow-elevation-2 border border-neutral-200 dark:border-neutral-800">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">Tamanhos de Ícones</h3>
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">{l('Tamanhos de Ícones', 'Icon Sizes')}</h3>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { size: 16, name: 'Small', usage: 'Inline text, labels' },
-            { size: 20, name: 'Medium', usage: 'Botões, navegação' },
-            { size: 24, name: 'Large', usage: 'Headers, destaque' },
-            { size: 32, name: 'Extra Large', usage: 'Hero sections, placeholders' }
+            { size: 16, name: 'Small', usage: l('Texto inline, rótulos', 'Inline text, labels') },
+            { size: 20, name: 'Medium', usage: l('Botões, navegação', 'Buttons, navigation') },
+            { size: 24, name: 'Large', usage: l('Headers, destaque', 'Headers, highlights') },
+            { size: 32, name: 'Extra Large', usage: l('Seções hero, placeholders', 'Hero sections, placeholders') }
           ].map((item) => (
             <div key={item.size} className="text-center p-4 border border-neutral-200 dark:border-neutral-700 rounded-lg">
               <div className="w-16 h-16 bg-neutral-50 dark:bg-neutral-800 rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -210,24 +212,24 @@ const IconLibrary = () => {
 
       {/* Usage Guidelines */}
       <div className="bg-gradient-to-br from-brand-50 to-white dark:from-neutral-900 dark:to-black rounded-xl p-6 border border-brand-200 dark:border-neutral-800">
-        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">Diretrizes de Uso</h3>
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">{l('Diretrizes de Uso', 'Usage Guidelines')}</h3>
         <div className="grid md:grid-cols-2 gap-6 text-sm">
           <div>
-            <h4 className="font-medium text-neutral-800 dark:text-white mb-3">Consistência</h4>
+            <h4 className="font-medium text-neutral-800 dark:text-white mb-3">{l('Consistência', 'Consistency')}</h4>
             <ul className="space-y-2 text-neutral-600 dark:text-neutral-300">
-              <li>• Use tamanhos padronizados (16, 20, 24, 32px)</li>
-              <li>• Mantenha o mesmo estilo visual</li>
-              <li>• Alinhe ícones com texto adjacente</li>
-              <li>• Use cores semânticas apropriadas</li>
+              <li>• {l('Use tamanhos padronizados (16, 20, 24, 32px)', 'Use standardized sizes (16, 20, 24, 32px)')}</li>
+              <li>• {l('Mantenha o mesmo estilo visual', 'Maintain consistent visual style')}</li>
+              <li>• {l('Alinhe ícones com texto adjacente', 'Align icons with adjacent text')}</li>
+              <li>• {l('Use cores semânticas apropriadas', 'Use appropriate semantic colors')}</li>
             </ul>
           </div>
           <div>
-            <h4 className="font-medium text-neutral-800 dark:text-white mb-3">Acessibilidade</h4>
+            <h4 className="font-medium text-neutral-800 dark:text-white mb-3">{l('Acessibilidade', 'Accessibility')}</h4>
             <ul className="space-y-2 text-neutral-600 dark:text-neutral-300">
-              <li>• Adicione aria-label quando necessário</li>
-              <li>• Use title para tooltips informativos</li>
-              <li>• Garanta contraste suficiente</li>
-              <li>• Teste com leitores de tela</li>
+              <li>• {l('Adicione aria-label quando necessário', 'Add aria-label when necessary')}</li>
+              <li>• {l('Use title para tooltips informativos', 'Use title for informative tooltips')}</li>
+              <li>• {l('Garanta contraste suficiente', 'Ensure sufficient contrast')}</li>
+              <li>• {l('Teste com leitores de tela', 'Test with screen readers')}</li>
             </ul>
           </div>
         </div>
