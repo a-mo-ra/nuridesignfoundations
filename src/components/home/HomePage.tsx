@@ -33,7 +33,7 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
 
 /* ──────────────── Looping Typewriter Hero Title ──────────────── */
 const HeroTitle = () => {
-  const words = ['Aprenda', 'Construa', 'Evolua'];
+  const words = ['Aprenda.', 'Construa.', 'Evolua.'];
   const [index, setIndex] = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [phase, setPhase] = useState<'typing' | 'pausing' | 'deleting'>('typing');

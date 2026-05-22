@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Moon, Sun, Search, X, Globe, Menu } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import nuriLogoLight from '@/assets/logo-light.png';
-import nuriLogoDark from '@/assets/logo-dark.png';
 
 interface HeaderProps {
   onGuidelinesClick: () => void;
@@ -113,11 +111,6 @@ const Header = ({ onGuidelinesClick, darkMode, onDarkModeToggle, onLogoClick, on
               onClick={onLogoClick}
               className="flex items-center gap-1.5 hover:opacity-80 transition-opacity shrink-0"
             >
-              <img 
-                src={darkMode ? nuriLogoDark : nuriLogoLight} 
-                alt="Nuri Design Foundations" 
-                className="w-8 h-8 object-contain" 
-              />
               <span className="text-base font-semibold text-foreground tracking-tight hidden sm:inline">Nuri Design Foundations</span>
             </button>
 
