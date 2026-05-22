@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   Palette, Type, Layers, Smile, Grid3X3, LayoutGrid, Navigation, FormInput, 
   Atom, Tag, Figma, Plug, Code, Sparkles, ArrowRight, Rocket, Globe2,
